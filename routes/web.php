@@ -12,5 +12,17 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+// Route::get('/tour', function () {
+//     return view('tour');
+// });
+
+route::get('/destination','MainController@destination');
+// Route::get('/berita', function () {
+//     return view('berita');
+// });
+
+// Route::get('/berita', 'MainController@berita');
+// Route::get('/kiprah-alumni', 'MainController@index');

@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Destination;
+use App\Wisata;
 
 class DestinationController extends Controller
 {
@@ -16,9 +16,9 @@ class DestinationController extends Controller
     public function index()
     {
         //
-        $dst = Destination::all();
+        $dst = Wisata::all();
         return response()->json([
-            'data' => $dst,
+            'data' => $dst
         ]);
     }
 

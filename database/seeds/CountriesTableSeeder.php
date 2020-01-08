@@ -1,10 +1,17 @@
 <?php
 
-class CountriesTableSeeder extends Seeder {
-	
-	public function run() 
-	{
-		DB::table('countries')->delete();
+use Illuminate\Database\Seeder;
+
+class CountriesTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+             	DB::table('countries')->delete();
 
 		$countries = array(
 			array('code' => 'US', 'name' => 'United States'),
@@ -252,5 +259,5 @@ class CountriesTableSeeder extends Seeder {
 		);
 
 		DB::table('countries')->insert($countries);
-	}
+    }
 }
