@@ -1,751 +1,430 @@
-<!DOCTYPE html>
-<html lang="en">
+	@extends('layouts.main')
+    @section('content')
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="slider_text text-center">
+                                <h3>Indonesia</h3>
+                                <p>Pixel perfect design with awesome contents</p>
+                                <a href="#" class="boxed-btn3">Explore Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center slider_bg_2 overlay">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="slider_text text-center">
+                                <h3>Australia</h3>
+                                <p>Pixel perfect design with awesome contents</p>
+                                <a href="#" class="boxed-btn3">Explore Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center slider_bg_3 overlay">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-12 col-md-12">
+                            <div class="slider_text text-center">
+                                <h3>Switzerland</h3>
+                                <p>Pixel perfect design with awesome contents</p>
+                                <a href="#" class="boxed-btn3">Explore Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
-    <!-- Title -->
-    <title>Dorne - Directory &amp; Listing Template</title>
-
-    <!-- Favicon -->
-    <link rel="icon" href="{{asset('assets/img/core-img/favicon.ico')}}">
-
-    <!-- Core Stylesheet -->
-    <link href="{{ asset('assets/style.css') }}" rel="stylesheet">
-
-    <!-- Responsive CSS -->
-    <link href="{{ asset('assets/css/responsive/responsive.css') }}" rel="stylesheet">
-
-</head>
-
-<body>
-    <!-- Preloader -->
-    <div id="preloader">
-        <div class="dorne-load"></div>
     </div>
+    <!-- slider_area_end -->
 
-    <!-- ***** Search Form Area ***** -->
-    <div class="dorne-search-form d-flex align-items-center">
+    <!-- where_togo_area_start  -->
+    <div class="where_togo_area">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="search-close-btn" id="closeBtn">
-                        <i class="pe-7s-close-circle" aria-hidden="true"></i>
-                    </div>
-                    <form action="#" method="get">
-                        <input type="search" name="caviarSearch" id="search" placeholder="Search Your Desire Destinations or Events">
-                        <input type="submit" class="d-none" value="submit">
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ***** Header Area Start ***** -->
-    <header class="header_area" id="header">
-        <div class="container-fluid h-100">
-            <div class="row h-100">
-                <div class="col-12 h-100">
-                    <nav class="h-100 navbar navbar-expand-lg">
-                        <a class="navbar-brand" href="index.html"><img src="{{asset('assets/img/core-img/logo.png')}}" alt=""></a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#dorneNav" aria-controls="dorneNav" aria-expanded="false" aria-label="Toggle navigation"><span class="fa fa-bars"></span></button>
-                        <!-- Nav -->
-                        <div class="collapse navbar-collapse" id="dorneNav">
-                            <ul class="navbar-nav mr-auto" id="dorneMenu">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Explore <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="index.html">Home</a>
-                                        <a class="dropdown-item" href="explore.html">Explore</a>
-                                        <a class="dropdown-item" href="listing.html">Listing</a>
-                                        <a class="dropdown-item" href="single-listing.html">Single Listing</a>
-                                        <a class="dropdown-item" href="contact.html">Contact</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Listings <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                                        <a class="dropdown-item" href="index.html">Home</a>
-                                        <a class="dropdown-item" href="explore.html">Explore</a>
-                                        <a class="dropdown-item" href="listing.html">Listing</a>
-                                        <a class="dropdown-item" href="single-listing.html">Single Listing</a>
-                                        <a class="dropdown-item" href="contact.html">Contact</a>
-                                    </div>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
-                                </li>
-                            </ul>
-                            <!-- Search btn -->
-                            <div class="dorne-search-btn">
-                                <a id="search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i> Search</a>
-                            </div>
-                            <!-- Signin btn -->
-                            <div class="dorne-signin-btn">
-                                <a href="#">Sign in  or Register</a>
-                            </div>
-                            <!-- Add listings btn -->
-                            <div class="dorne-add-listings-btn">
-                                <a href="#" class="btn dorne-btn">+ Add Listings</a>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- ***** Header Area End ***** -->
-
-    <!-- ***** Welcome Area Start ***** -->
-    <section class="dorne-welcome-area bg-img bg-overlay" style="background-image: url({{ asset('assets/img/bg-img/hero-1.jpg')}});">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center justify-content-center">
-                <div class="col-12 col-md-10">
-                    <div class="hero-content">
-                        <h2>Discover places near you</h2>
-                        <h4>This is the best guide of your city</h4>
-                    </div>
-                    <!-- Hero Search Form -->
-                    <div class="hero-search-form">
-                        <!-- Tabs -->
-                        <div class="nav nav-tabs" id="heroTab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-places-tab" data-toggle="tab" href="#nav-places" role="tab" aria-controls="nav-places" aria-selected="true">Places</a>
-                            <a class="nav-item nav-link" id="nav-events-tab" data-toggle="tab" href="#nav-events" role="tab" aria-controls="nav-events" aria-selected="false">Events</a>
-                        </div>
-                        <!-- Tabs Content -->
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-places" role="tabpanel" aria-labelledby="nav-places-tab">
-                                <h6>What are you looking for?</h6>
-                                <form action="#" method="get">
-                                    <select class="custom-select">
-                                        <option selected>Your Destinations</option>
-                                        <option value="1">New York</option>
-                                        <option value="2">Latvia</option>
-                                        <option value="3">Dhaka</option>
-                                        <option value="4">Melbourne</option>
-                                        <option value="5">London</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected>All Catagories</option>
-                                        <option value="1">Catagories 1</option>
-                                        <option value="2">Catagories 2</option>
-                                        <option value="3">Catagories 3</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected>Price Range</option>
-                                        <option value="1">$100 - $499</option>
-                                        <option value="2">$500 - $999</option>
-                                        <option value="3">$1000 - $4999</option>
-                                    </select>
-                                    <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
-                                </form>
-                            </div>
-                            <div class="tab-pane fade" id="nav-events" role="tabpanel" aria-labelledby="nav-events-tab">
-                                <h6>What are you looking for?</h6>
-                                <form action="#" method="get">
-                                    <select class="custom-select">
-                                        <option selected>Your Destinations</option>
-                                        <option value="1">New York</option>
-                                        <option value="2">Latvia</option>
-                                        <option value="3">Dhaka</option>
-                                        <option value="4">Melbourne</option>
-                                        <option value="5">London</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected>All Catagories</option>
-                                        <option value="1">Catagories 1</option>
-                                        <option value="2">Catagories 2</option>
-                                        <option value="3">Catagories 3</option>
-                                    </select>
-                                    <select class="custom-select">
-                                        <option selected>Price Range</option>
-                                        <option value="1">$100 - $499</option>
-                                        <option value="2">$500 - $999</option>
-                                        <option value="3">$1000 - $4999</option>
-                                    </select>
-                                    <button type="submit" class="btn dorne-btn"><i class="fa fa-search pr-2" aria-hidden="true"></i> Search</button>
-                                </form>
-                            </div>
-                        </div>
+            <div class="row align-items-center">
+                <div class="col-lg-3">
+                    <div class="form_area">
+                        <h3>Where you want to go?</h3>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- Hero Social Btn -->
-        <div class="hero-social-btn">
-            <div class="social-title d-flex align-items-center">
-                <h6>Follow us on Social Media</h6>
-                <span></span>
-            </div>
-            <div class="social-btns">
-                <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-                <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-                <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Welcome Area End ***** -->
-
-    <!-- ***** Catagory Area Start ***** -->
-    <section class="dorne-catagory-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="all-catagories">
-                        <div class="row">
-                            <!-- Single Catagory Area -->
-                            <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.2s">
-                                    <div class="catagory-content">
-                                        <img src="{{asset('assets/img/core-img/icon-1.png')}}" alt="">
-                                        <a href="#">
-                                            <h6>Hotels</h6>
-                                        </a>
-                                    </div>
-                                </div>
+                <div class="col-lg-9">
+                    <div class="search_wrap">
+                        <form class="search_form" action="#">
+                            <div class="input_field">
+                                <input type="text" placeholder="Where to go?">
                             </div>
-                            <!-- Single Catagory Area -->
-                            <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.4s">
-                                    <div class="catagory-content">
-                                        <img src="{{asset('assets/img/core-img/icon-2.png')}}" alt="">
-                                        <a href="#">
-                                            <h6>Restaurants</h6>
-                                        </a>
-                                    </div>
-                                </div>
+                            <div class="input_field">
+                                <input id="datepicker" placeholder="Date">
                             </div>
-                            <!-- Single Catagory Area -->
-                            <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.6s">
-                                    <div class="catagory-content">
-                                        <img src="{{asset('assets/img/core-img/icon-3.png')}}" alt="">
-                                        <a href="#">
-                                            <h6>Shopping</h6>
-                                        </a>
-                                    </div>
-                                </div>
+                            <div class="input_field">
+                                <select>
+                                    <option data-display="Travel type">Travel type</option>
+                                    <option value="1">Some option</option>
+                                    <option value="2">Another option</option>
+                                </select>
                             </div>
-                            <!-- Single Catagory Area -->
-                            <div class="col-12 col-sm-6 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="0.8s">
-                                    <div class="catagory-content">
-                                        <img src="{{asset('assets/img/core-img/icon-4.png')}}" alt="">
-                                        <a href="#">
-                                            <h6>Beauty &amp; Spa</h6>
-                                        </a>
-                                    </div>
-                                </div>
+                            <div class="search_btn">
+                                <button class="boxed-btn4 " type="submit" >Search</button>
                             </div>
-                            <!-- Single Catagory Area -->
-                            <div class="col-12 col-md">
-                                <div class="single-catagory-area wow fadeInUpBig" data-wow-delay="1s">
-                                    <div class="catagory-content">
-                                        <img src="{{asset('assets/img/core-img/icon-5.png')}}" alt="">
-                                        <a href="#">
-                                            <h6>Cinema</h6>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Catagory Area End ***** -->
-
-    <!-- ***** About Area Start ***** -->
-    <section class="dorne-about-area section-padding-0-100">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="about-content text-center">
-                        <h2>Discover your city with <br><span>Dorne</span></h2>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce quis tempus elit. Sed efficitur tortor neque, vitae aliquet urna varius sit amet. Ut rhoncus, nunc nec tincidunt volutpat, ex libero.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** About Area End ***** -->
-
-    <!-- ***** Editor Pick Area Start ***** -->
-    <section class="dorne-editors-pick-area bg-img bg-overlay-9 section-padding-100" style="background-image: url(img/bg-img/hero-2.jpg')}});">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <span></span>
-                        <h4>Cities you must see</h4>
-                        <p>Editor’s pick</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-lg-6">
-                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.2s">
-                        <img src="{{asset('assets/img/bg-img/editor-1.jpg')}}" alt="">
-                        <div class="editors-pick-info">
-                            <div class="places-total-destinations d-flex">
-                                <a href="#">New York</a>
-                                <a href="#">1643 Destinations</a>
-                            </div>
-                            <div class="add-more">
-                                <a href="#">+</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.4s">
-                        <img src="{{asset('assets/img/bg-img/editor-2.jpg')}}" alt="">
-                        <div class="editors-pick-info">
-                            <div class="places-total-destinations d-flex">
-                                <a href="#">Barcelona</a>
-                                <a href="#">943 Destinations</a>
-                            </div>
-                            <div class="add-more">
-                                <a href="#">+</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-editors-pick-area wow fadeInUp" data-wow-delay="0.6s">
-                        <img src="{{asset('assets/img/bg-img/editor-3.jpg')}}" alt="">
-                        <div class="editors-pick-info">
-                            <div class="places-total-destinations d-flex">
-                                <a href="#">paris</a>
-                                <a href="#">243 Destinations</a>
-                            </div>
-                            <div class="add-more">
-                                <a href="#">+</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Editor Pick Area End ***** -->
-
-    <!-- ***** Features Destinations Area Start ***** -->
-    <section class="dorne-features-destinations-area">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading dark text-center">
-                        <span></span>
-                        <h4>Featured destinations</h4>
-                        <p>Editor’s pick</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="features-slides owl-carousel">
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{asset('assets/img/bg-img/feature-1.jpg')}}" alt="">
-                            <!-- Price -->
-                            <div class="price-start">
-                                <p>FROM $59/night</p>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Ibiza</h5>
-                                    <p>Party</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{asset('assets/img/bg-img/feature-2.jpg')}}" alt="">
-                            <!-- Price -->
-                            <div class="price-start">
-                                <p>FROM $59/night</p>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Paris</h5>
-                                    <p>Luxury</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{asset('assets/img/bg-img/feature-3.jpg')}}" alt="">
-                            <!-- Price -->
-                            <div class="price-start">
-                                <p>FROM $59/night</p>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Lake Como</h5>
-                                    <p>Spectacular</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{asset('assets/img/bg-img/feature-4.jpg')}}" alt="">
-                            <!-- Price -->
-                            <div class="price-start">
-                                <p>FROM $59/night</p>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Greece</h5>
-                                    <p>Sunny</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{asset('assets/img/bg-img/feature-5.jpg')}}" alt="">
-                            <!-- Price -->
-                            <div class="price-start">
-                                <p>FROM $59/night</p>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Norway</h5>
-                                    <p>All Year round</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Features Destinations Area End ***** -->
-
-    <!-- ***** Features Restaurant Area Start ***** -->
-    <section class="dorne-features-restaurant-area bg-default">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <span></span>
-                        <h4>Featured Restaurants</h4>
-                        <p>Editor’s pick</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12">
-                    <div class="features-slides owl-carousel">
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{ asset('assets/img/bg-img/feature-6.jpg') }}" alt="">
-                            <!-- Rating & Map Area -->
-                            <div class="ratings-map-area d-flex">
-                                <a href="#">8.5</a>
-                                <a href="#"><img src="{{asset('assets/img/core-img/map.png')}}" alt=""></a>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Martha’s bar</h5>
-                                    <p>Manhathan</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{asset('assets/img/bg-img/feature-7.jpg')}}" alt="">
-                            <!-- Rating & Map Area -->
-                            <div class="ratings-map-area d-flex">
-                                <a href="#">9.5</a>
-                                <a href="#"><img src="{{asset('assets/img/core-img/map.png')}}" alt=""></a>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Delux Restaurant</h5>
-                                    <p>Paris</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{asset('assets/img/bg-img/feature-8.jpg')}}" alt="">
-                            <!-- Rating & Map Area -->
-                            <div class="ratings-map-area d-flex">
-                                <a href="#">8.2</a>
-                                <a href="#"><img src="{{asset('assets/img/core-img/map.png')}}" alt=""></a>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Jim’s corner Pub</h5>
-                                    <p>Madrid</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{asset('assets/img/bg-img/feature-9.jpg')}}" alt="">
-                            <!-- Rating & Map Area -->
-                            <div class="ratings-map-area d-flex">
-                                <a href="#">8.7</a>
-                                <a href="#"><img src="{{asset('assets/img/core-img/map.png')}}" alt=""></a>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>tower Risto bar</h5>
-                                    <p>Sydney</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single Features Area -->
-                        <div class="single-features-area">
-                            <img src="{{asset('assets/img/bg-img/feature-10.jpg')}}" alt="">
-                            <!-- Rating & Map Area -->
-                            <div class="ratings-map-area d-flex">
-                                <a href="#">9.8</a>
-                                <a href="#"><img src="{{asset('assets/img/core-img/map.png')}}" alt=""></a>
-                            </div>
-                            <div class="feature-content d-flex align-items-center justify-content-between">
-                                <div class="feature-title">
-                                    <h5>Pizzeria venezia</h5>
-                                    <p>Hong Kong</p>
-                                </div>
-                                <div class="feature-favourite">
-                                    <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Features Restaurant Area End ***** -->
-
-    <!-- ***** Features Events Area Start ***** -->
-    <section class="dorne-features-events-area bg-img bg-overlay-9 section-padding-100-50" style="background-image: url(img/bg-img/hero-3.jpg')}})">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <span></span>
-                        <h4>Featured events</h4>
-                        <p>Editor’s pick</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.2s">
-                        <div class="feature-events-thumb">
-                            <img src="{{asset('assets/img/bg-img/event-1.jpg')}}" alt="">
-                            <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="{{asset('assets/img/core-img/map.png')}}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>Jazz Concert</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                        </div>
-                        <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.3s">
-                        <div class="feature-events-thumb">
-                            <img src="{{asset('assets/img/bg-img/event-2.jpg')}}" alt="">
-                            <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="{{asset('assets/img/core-img/map.png')}}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>DeeJay in the house</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                        </div>
-                        <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.4s">
-                        <div class="feature-events-thumb">
-                            <img src="{{asset('assets/img/bg-img/event-3.jpg')}}" alt="">
-                            <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="{{asset('assets/img/core-img/map.png')}}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>Theatre Night outside</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                        </div>
-                        <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.5s">
-                        <div class="feature-events-thumb">
-                            <img src="{{asset('assets/img/bg-img/event-4.jpg')}}" alt="">
-                            <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="{{asset('assets/img/core-img/map.png')}}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>Wine tasting</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                        </div>
-                        <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.6s">
-                        <div class="feature-events-thumb">
-                            <img src="{{asset('assets/img/bg-img/event-5.jpg')}}" alt="">
-                            <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="{{asset('assets/img/core-img/map.png')}}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>New Moon Party</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                        </div>
-                        <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6">
-                    <div class="single-feature-events-area d-sm-flex align-items-center wow fadeInUpBig" data-wow-delay="0.7s">
-                        <div class="feature-events-thumb">
-                            <img src="{{asset('assets/img/bg-img/event-6.jpg')}}" alt="">
-                            <div class="date-map-area d-flex">
-                                <a href="#">26 Nov</a>
-                                <a href="#"><img src="{{asset('assets/img/core-img/map.png')}}" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="feature-events-content">
-                            <h5>Happy hour at pub</h5>
-                            <h6>Manhathan</h6>
-                            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra...</p>
-                        </div>
-                        <div class="feature-events-details-btn">
-                            <a href="#">+</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ***** Features Events Area End ***** -->
-
-    <!-- ***** Clients Area Start ***** -->
-    <div class="dorne-clients-area section-padding-100">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="clients-logo d-md-flex align-items-center justify-content-around">
-                        <img src="{{asset('assets/img/clients-img/1.png')}}" alt="">
-                        <img src="{{asset('assets/img/clients-img/2.png')}}" alt="">
-                        <img src="{{asset('assets/img/clients-img/3.png')}}" alt="">
-                        <img src="{{asset('assets/img/clients-img/4.png')}}" alt="">
-                        <img src="{{asset('assets/img/clients-img/5.png')}}" alt="">
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- ***** Clients Area End ***** -->
-
-    <!-- ****** Footer Area Start ****** -->
-    <footer class="dorne-footer-area">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 d-md-flex align-items-center justify-content-between">
-                    <div class="footer-text">
-                        <p>
-                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+    <!-- where_togo_area_end  -->
+    
+    <!-- popular_destination_area_start  -->
+    <div class="popular_destination_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center mb_70">
+                        <h3>Popular Destination</h3>
+                        <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
                     </div>
-                    <div class="footer-social-btns">
-                        <a href="#"><i class="fa fa-linkedin" aria-haspopup="true"></i></a>
-                        <a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
-                        <a href="#"><i class="fa fa-twitter" aria-haspopup="true"></i></a>
-                        <a href="#"><i class="fa fa-facebook" aria-haspopup="true"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="{{asset('assets/img/destination/1.png')}}" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">Italy <a href="travel_destination.html">  07 Places</a> </p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="{{asset('assets/img/destination/2.png')}}" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">Brazil <a href="travel_destination.html">  03 Places</a> </p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="{{asset('assets/img/destination/3.png')}}" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">America <a href="travel_destination.html">  10 Places</a> </p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="{{asset('assets/img/destination/4.png')}}" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">Nepal <a href="travel_destination.html">  02 Places</a> </p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="{{asset('assets/img/destination/5.png')}}" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">Maldives <a href="travel_destination.html">  02 Places</a> </p>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_destination">
+                        <div class="thumb">
+                            <img src="{{asset('assets/img/destination/6.png')}}" alt="">
+                        </div>
+                        <div class="content">
+                            <p class="d-flex align-items-center">Indonesia <a href="travel_destination.html">  05 Places</a> </p>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- ****** Footer Area End ****** -->
+    </div>
+    <!-- popular_destination_area_end  -->
 
-    <!-- jQuery-2.2.4 js -->
-    <script src="{{asset('assets/js/jquery/jquery-2.2.4.min.js')}}"></script>
-    <!-- Popper js -->
-    <script src="{{asset('assets/js/bootstrap/popper.min.js')}}"></script>
-    <!-- Bootstrap-4 js -->
-    <script src="{{asset('assets/js/bootstrap/bootstrap.min.js')}}"></script>
-    <!-- All Plugins js -->
-    <script src="{{asset('assets/js/others/plugins.js')}}"></script>
-    <!-- Active JS -->
-    <script src="{{asset('assets/js/active.js')}}"></script>
-</body>
+    <!-- newletter_area_start  -->
+    <div class="newletter_area overlay">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-10">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5">
+                            <div class="newsletter_text">
+                                <h4>Subscribe Our Newsletter</h4>
+                                <p>Subscribe newsletter to get offers and about
+                                    new places to discover.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="mail_form">
+                                <div class="row no-gutters">
+                                    <div class="col-lg-9 col-md-8">
+                                        <div class="newsletter_field">
+                                            <input type="email" placeholder="Your mail" >
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-md-4">
+                                        <div class="newsletter_btn">
+                                            <button class="boxed-btn4 " type="submit" >Subscribe</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- newletter_area_end  -->
 
-</html>
+    <div class="popular_places_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center mb_70">
+                        <h3>Popular Places</h3>
+                        <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                @foreach ($grouptour as $gt)
+                    
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_place">
+                        <div class="thumb">
+                            <img src="{{asset('assets/img/place/1.png')}}" alt="">
+                        <a href="#" class="prise">Start From</a>
+                        </div>
+                        <div class="place_info">
+                            <a href="{{url('tour/'.$gt->slug)}}"><h3>{{ $gt->name }}</h3></a>
+                            <p>United State of America</p>
+                            <div class="rating_days d-flex justify-content-between">
+                               
+                                {{-- <div class="days">
+                                    <i class="fa fa-clock-o"></i>
+                                    <a href="#">5 Days</a>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                                @endforeach
+
+                                @dump($grouptour)
+
+        
+            </div>
+               
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="more_place_btn text-center">
+                        <a class="boxed-btn4" href="#">More Places</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="video_area video_bg overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="video_wrap text-center">
+                        <h3>Enjoy Video</h3>
+                        <div class="video_icon">
+                            <a class="popup-video video_play_button" href="https://www.youtube.com/watch?v=f59dDEk57i0">
+                                <i class="fa fa-play"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="travel_variation_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_travel text-center">
+                        <div class="icon">
+                            <img src="{{asset('assets/img/svg_icon/1.svg')}}" alt="">
+                        </div>
+                        <h3>Comfortable Journey</h3>
+                        <p>A wonderful serenity has taken to the possession of my entire soul.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_travel text-center">
+                        <div class="icon">
+                            <img src="{{asset('assets/img/svg_icon/2.svg')}}" alt="">
+                        </div>
+                        <h3>Luxuries Hotel</h3>
+                        <p>A wonderful serenity has taken to the possession of my entire soul.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_travel text-center">
+                        <div class="icon">
+                            <img src="{{asset('assets/img/svg_icon/3.svg')}}" alt="">
+                        </div>
+                        <h3>Travel Guide</h3>
+                        <p>A wonderful serenity has taken to the possession of my entire soul.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- testimonial_area  -->
+    <div class="testimonial_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="testmonial_active owl-carousel">
+                        <div class="single_carousel">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="single_testmonial text-center">
+                                        <div class="author_thumb">
+                                            <img src="{{asset('assets/img/testmonial/author.png')}}" alt="">
+                                        </div>
+                                        <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
+                                        <div class="testmonial_author">
+                                            <h3>- Micky Mouse</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="single_testmonial text-center">
+                                        <div class="author_thumb">
+                                            <img src="{{asset('assets/img/testmonial/author.png')}}" alt="">
+                                        </div>
+                                        <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
+                                        <div class="testmonial_author">
+                                            <h3>- Tom Mouse</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single_carousel">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="single_testmonial text-center">
+                                        <div class="author_thumb">
+                                            <img src="{{asset('assets/img/testmonial/author.png')}}" alt="">
+                                        </div>
+                                        <p>"Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
+                                        <div class="testmonial_author">
+                                            <h3>- Jerry Mouse</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /testimonial_area  -->
+
+
+    <div class="recent_trip_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section_title text-center mb_70">
+                        <h3>Recent Trips</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_trip">
+                        <div class="thumb">
+                            <img src="{{asset('assets/img/trip/1.png')}}" alt="">
+                        </div>
+                        <div class="info">
+                            <div class="date">
+                                <span>Oct 12, 2019</span>
+                            </div>
+                            <a href="#">
+                                <h3>Journeys Are Best Measured In
+                                    New Friends</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_trip">
+                        <div class="thumb">
+                            <img src="{{asset('assets/img/trip/2.png')}}" alt="">
+                        </div>
+                        <div class="info">
+                            <div class="date">
+                                <span>Oct 12, 2019</span>
+                            </div>
+                            <a href="#">
+                                <h3>Journeys Are Best Measured In
+                                    New Friends</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_trip">
+                        <div class="thumb">
+                            <img src="{{asset('assets/img/trip/3.png')}}" alt="">
+                        </div>
+                        <div class="info">
+                            <div class="date">
+                                <span>Oct 12, 2019</span>
+                            </div>
+                            <a href="#">
+                                <h3>Journeys Are Best Measured In
+                                    New Friends</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @endsection

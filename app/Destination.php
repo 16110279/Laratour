@@ -14,4 +14,9 @@ class Destination extends Model
     { 
         return $this->belongsTo('App\Countries','country_id');
     }
+
+    public function tour()
+    {
+        return $this->belongsToMany(App\Tour::class,'tour_destinations');
+    }
 }

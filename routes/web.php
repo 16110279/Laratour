@@ -1,5 +1,12 @@
 <?php
 
+use App\Itineraries;
+use App\TourSchedule;
+use App\ItineraryContent;
+use App\Tour;
+use App\TourPricing;
+use App\Destination;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,18 +18,45 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+// Route::get('/', function () {
+//     $tour = Tour::all();
+//     return view('index')->with('tour',$tour);
+// });
+
+// Route::get('tour/{slug}', function($slug)
+// {
+//     $tour = Tour::where('slug',$slug)->first();
+//     return view('slug')->with('tour',$tour);
+// });
+
+
+Route::get('tour/{slug}','TourPackagesController@slug');
+
+// Route::get('/urlslug', function () {
+//     return view('urlslug');
+// });
+
+
+// route::get('/destination','MainController@destination');
+route::get('/','MainController@index');
+// route::get('/group-tour/{tour}','TourPackagesController@detail');
+
+
+Route::get('/dev', function () {
+
+
+    $tour = Tour::with('destination.countries')->where('id',1)->first();
+    $destination = Destination::with('countries')->get();
+        // @dump($tour->destination);
+    // $tour->destination()->attach(3);
+    // $tour->destination()->detach(1);
+    // dd($tour->destination);
+    
+    $schedule = TourSchedule::all();
+
+    $price = TourPricing::where('tour_id',1)->get();
+    $itineraries = ItineraryContent::all();
+   
+    return view('slug',compact('destination','price','tour','itineraries','schedule'));
+
 });
-
-// Route::get('/tour', function () {
-//     return view('tour');
-// });
-
-route::get('/destination','MainController@destination');
-// Route::get('/berita', function () {
-//     return view('berita');
-// });
-
-// Route::get('/berita', 'MainController@berita');
-// Route::get('/kiprah-alumni', 'MainController@index');

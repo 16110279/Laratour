@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Destination;
+use App\Tour;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -13,8 +14,10 @@ class MainController extends Controller
      */
     public function index()
     {
-        //
-        // return view('berita');
+
+        $grouptour = Tour::all();
+        $individualtour = Tour::where('category','Individual')->get();
+        return view('index', compact('grouptour','individualtour'));
     }
 
 

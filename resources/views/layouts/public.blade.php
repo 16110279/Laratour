@@ -1,146 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>DirEngine - Free Bootstrap 4 Template by Colorlib</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
 
-    <link rel="stylesheet" href="{{asset('assets/css/open-iconic-bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
-    
-    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}">
+<head>
+	<title>Travello</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Travello template project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/bootstrap4/bootstrap.min.css')}}">
+	<link href="{{asset('assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/OwlCarousel2-2.2.1/owl.carousel.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/OwlCarousel2-2.2.1/owl.theme.default.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/OwlCarousel2-2.2.1/animate.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/main_styles.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/responsive.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/styles/news.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('assets/styles/news_responsive.css')}}">
+</head>
 
-    <link rel="stylesheet" href="{{asset('assets/css/aos.css')}}">
+<body>
 
-    <link rel="stylesheet" href="{{asset('assets/css/ionicons.min.css')}}">
+	<div class="super_container">
 
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap-datepicker.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/jquery.timepicker.css')}}">
+		<!-- Header -->
 
-    
-    <link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/icomoon.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-  </head>
-  <body>
-    
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">dirEngine.</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-      </button>
+		<header class="header">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="header_content d-flex flex-row align-items-center justify-content-start">
+							<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+								<div class="logo"><a href="index.html">Travello</a></div>
+								<nav class="main_nav">
+									<ul class="d-flex flex-row align-items-start justify-content-start">
+										<li class="active"><a href="index.html">Home</a></li>
+										<li><a href="about.html">About us</a></li>
+										<li><a href="#">Services</a></li>
+										<li><a href="news.html">News</a></li>
+										<li><a href="contact.html">Contact</a></li>
+									</ul>
+								</nav>
+								<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
 
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-          <li class="nav-item active"><a href="tour.html" class="nav-link">Tour</a></li>
-          <li class="nav-item"><a href="hotel.html" class="nav-link">Hotels</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-          <li class="nav-item cta"><a href="contact.html" class="nav-link"><span>Add listing</span></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-    <!-- END nav -->
+								<!-- Hamburger -->
 
-    @yield('content')
+								<div class="hamburger ml-auto">
+									<i class="fa fa-bars" aria-hidden="true"></i>
+								</div>
 
-     <footer class="ftco-footer ftco-bg-dark ftco-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">dirEngine</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4 ml-md-5">
-              <h2 class="ftco-heading-2">Information</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Service</a></li>
-                <li><a href="#" class="py-2 d-block">Terms and Conditions</a></li>
-                <li><a href="#" class="py-2 d-block">Become a partner</a></li>
-                <li><a href="#" class="py-2 d-block">Best Price Guarantee</a></li>
-                <li><a href="#" class="py-2 d-block">Privacy and Policy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Customer Support</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">FAQ</a></li>
-                <li><a href="#" class="py-2 d-block">Payment Option</a></li>
-                <li><a href="#" class="py-2 d-block">Booking Tips</a></li>
-                <li><a href="#" class="py-2 d-block">How it works</a></li>
-                <li><a href="#" class="py-2 d-block">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header_social d-flex flex-row align-items-center justify-content-start">
+				<ul class="d-flex flex-row align-items-start justify-content-start">
+					<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
+		</header>
+
+		<!-- Menu -->
+
+		<div class="menu">
+			<div class="menu_header d-flex flex-row align-items-center justify-content-start">
+				<div class="menu_logo"><a href="index.html">Travello</a></div>
+				<div class="menu_close_container ml-auto">
+					<div class="menu_close">
+						<div></div>
+						<div></div>
+					</div>
+				</div>
+			</div>
+			<div class="menu_content">
+				<ul>
+					<li><a href="inex.html">Home</a></li>
+					<li><a href="about.html">About us</a></li>
+					<li><a href="#">Services</a></li>
+					<li><a href="news.html">News</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class="menu_social">
+				<div class="menu_phone ml-auto">Call us: 00-56 445 678 33</div>
+				<ul class="d-flex flex-row align-items-start justify-content-start">
+					<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+					<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+				</ul>
+			</div>
 		</div>
 
-       <div class="row">
-          <div class="col-md-12 text-center">
+        @yield('content')
 
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
-  
+        <!-- Footer -->
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+		<footer class="footer">
+			<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="{{asset('assets/images/footer_1.jpg')}}"
+				data-speed="0.8"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<div class="newsletter">
+							<div class="newsletter_title_container text-center">
+								<div class="newsletter_title">Subscribe to our newsletter to get the latest trends &
+									news</div>
+								<div class="newsletter_subtitle">Join our database NOW!</div>
+							</div>
+							<div class="newsletter_form_container">
+								<form action="#"
+									class="newsletter_form d-flex flex-md-row flex-column align-items-start justify-content-between"
+									id="newsletter_form">
+									<div
+										class="d-flex flex-md-row flex-column align-items-start justify-content-between">
+										<div><input type="text" class="newsletter_input newsletter_input_name"
+												id="newsletter_input_name" placeholder="Name" required="required">
+											<div class="input_border"></div>
+										</div>
+										<div><input type="email" class="newsletter_input newsletter_input_email"
+												id="newsletter_input_email" placeholder="Your e-mail"
+												required="required">
+											<div class="input_border"></div>
+										</div>
+									</div>
+									<div><button class="newsletter_button">subscribe</button></div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row footer_contact_row">
+					<div class="col-xl-10 offset-xl-1">
+						<div class="row">
 
+							<!-- Footer Contact Item -->
+							<div class="col-xl-4 footer_contact_col">
+								<div
+									class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+									<div class="footer_contact_icon"><img src="{{asset('assets/images/sign.svg')}}" alt=""></div>
+									<div class="footer_contact_title">give us a call</div>
+									<div class="footer_contact_list">
+										<ul>
+											<li>Office Landline: +44 5567 32 664 567</li>
+											<li>Mobile: +44 5567 89 3322 332</li>
+										</ul>
+									</div>
+								</div>
+							</div>
 
-  <script src="{{asset('assets/js/jquery.min.js')}}"></script>
-  <script src="{{asset('assets/js/jquery-migrate-3.0.1.min.js')}}"></script>
-  <script src="{{asset('assets/js/popper.min.js')}}"></script>
-  <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-  <script src="{{asset('assets/js/jquery.easing.1.3.js')}}"></script>
-  <script src="{{asset('assets/js/jquery.waypoints.min.js')}}"></script>
-  <script src="{{asset('assets/js/jquery.stellar.min.js')}}"></script>
-  <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
-  <script src="{{asset('assets/js/jquery.magnific-popup.min.js')}}"></script>
-  <script src="{{asset('assets/js/aos.js')}}"></script>
-  <script src="{{asset('assets/js/jquery.animateNumber.min.js')}}"></script>
-  <script src="{{asset('assets/js/bootstrap-datepicker.js')}}"></script>
-  {{-- <script src="{{asset('assets/js/jquery.timepicker.min.js')}}"></script> --}}
-  <script src="{{asset('assets/js/scrollax.min.js')}}"></script>
-  <script src="{{asset('assets/js/range.js')}}"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="{{asset('assets/js/google-map.js')}}"></script>
-  <script src="{{asset('assets/js/main.js')}}"></script>
-    
-  </body>
+							<!-- Footer Contact Item -->
+							<div class="col-xl-4 footer_contact_col">
+								<div
+									class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+									<div class="footer_contact_icon"><img src="{{asset('assets/images/trekking.svg')}}" alt=""></div>
+									<div class="footer_contact_title">come & drop by</div>
+									<div class="footer_contact_list">
+										<ul style="max-width:190px">
+											<li>4124 Barnes Street, Sanford, FL 32771</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<!-- Footer Contact Item -->
+							<div class="col-xl-4 footer_contact_col">
+								<div
+									class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
+									<div class="footer_contact_icon"><img src="{{asset('assets/images/around.svg')}}" alt=""></div>
+									<div class="footer_contact_title">send us a message</div>
+									<div class="footer_contact_list">
+										<ul>
+											<li>youremail@gmail.com</li>
+											<li>Office@yourbusinessname.com</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col text-center">
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				Copyright &copy;<script>
+					document.write(new Date().getFullYear());
+				</script> All rights reserved | This template is made with <i class="fa fa-heart-o"
+					aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			</div>
+		</footer>
+	</div>
+
+	<script src="{{asset('assets/js/jquery-3.2.1.min.js')}}"></script>
+	<script src="{{asset('assets/styles/bootstrap4/popper.js')}}"></script>
+	<script src="{{asset('assets/styles/bootstrap4/bootstrap.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
+	<script src="{{asset('assets/plugins/Isotope/isotope.pkgd.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/scrollTo/jquery.scrollTo.min.js')}}"></script>
+	<script src="{{asset('assets/plugins/easing/easing.js')}}"></script>
+	<script src="{{asset('assets/plugins/parallax-js-master/parallax.min.js')}}"></script>
+	<script src="{{asset('assets/js/custom.js')}}"></script>
+</body>
+
 </html>

@@ -1,0 +1,4 @@
+@foreach ($tour as $item)
+	{{-- {{ $item->slug }}? --}}
+<li><a href="/tour/{{$item->slug}}">{{$item->name}}</a> </li>
+@endforeach
