@@ -4,30 +4,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <style>
-
-.form-select .nice-select {
-    border: none;
-    border-radius: 0px;
-    /* height: 70px; */
-    /* background: #dc3545; */
-    /* padding-left: 45px; */
-    /* padding-right: 40px; */
-    width: 100%;
-}
-
-
-.form-control:disabled,
-.form-control[readonly] {
-    background-color: #fff;
-    opacity: 1;
-}
-
-
-
-input[type=number]{
-    width: 80px;
-} 
-
         ul.timeline {
     list-style-type: none;
     position: relative;
@@ -69,7 +45,7 @@ ul.timeline>li:before {
     overflow-x: hidden;
 }
         </style>
-{{-- 
+
        <!-- where_togo_area_start  -->
     <div class="where_togo_area">
         <div class="container">
@@ -93,11 +69,11 @@ ul.timeline>li:before {
 
                                 @endforeach
                                 
-                            </select> --}}
+                            </select>
 
                                 {{-- <input id="datepicker" placeholder="Date"> --}}
                                 {{-- <input id="datepicker" placeholder="Date"> --}}
-                            {{-- </div> --}}
+                            </div>
                             {{-- <div class="input_field">
                                 <select>
                                     <option data-display="Travel type">Travel type</option>
@@ -107,7 +83,7 @@ ul.timeline>li:before {
                             </div> --}}
 
                            
-{{-- </div> --}}
+</div>
                                                         {{-- <div class="input_field">
 
                                 <form action="">
@@ -202,17 +178,24 @@ ul.timeline>li:before {
                                 fraction of the camp price. However, who has the willpower to actually sit through a
                                 self-imposed MCSE training. who has the willpower to actually
                             </p> --}}
-    
+                            <div class="quote-wrapper">
+                                <div class="quotes">
+                                        <select>
+                                    <option data-display="Tanggal Keberangkatan">Tanggal Keberangkatan</option>
 
-                                                    <br>
+                                @foreach ($schedule as $scd)
+                                                                        <option value="1">{{$scd->date_start}}</option>
 
-                        <h3>Tour Pricing</h3>
 
-                        <br>
+                                @endforeach
+                                
+                            </select>
+                            <br>
+                            <br>
 <table id="penjualan" class="table table-responsive table-hover">
     <thead>
-        <tr><th>Paket</th>
-             <th>Harga (IDR)</th>
+        <tr><th>Produk</th>
+             <th>Harga</th>
            
             <th>Jumlah</th>
             <th align="center"><span id="amount" class="amount">Subtotal</span> </th></tr>
@@ -228,26 +211,18 @@ ul.timeline>li:before {
         
         <tbody>
 
-        <form action="{{url('tour/booking')}}" method="POST">
-     <div class="form-group">
-    <select class="form-control" name="tanggal[]" id="exampleFormControlSelect1">
-        {{-- @dump($schedule) --}}
-            <option disabled selected>Tanggal Keberangkatan</option>
-@foreach ($schedule as $scd)
-    <option value="{{$scd->id}}">{{$scd->date_start}}</option>
-@endforeach
-    </select>
-  </div>
             @foreach ($price as $prc)
                  <tr><td>{{ $prc->name }}</td>
                          <td>
-                             @csrf
-                    <input type="text" name="id[]"  value="{{ $prc->id }}" class="id form-control" hidden>
-                    <input type="text" name="price[]"  value="{{ $prc->price }}" class="price form-control">
+                    <input type="text"  value="{{ $prc->price }}" class="price form-control" disabled="true">
                 </td>
                 <td>
+                    {{-- <select value="" name="qty" class="qty form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select> --}}
 
-                    <input type="number"  min="0" name="qty[]" class="qty form-control" placeholder="QTY">
+                    <input type="number"  min="0" name="qty" class="qty form-control" id="">
                 </td>
                      
                 <td align="center">
@@ -265,18 +240,66 @@ ul.timeline>li:before {
         
         </table>
                                  {{-- <button class="boxed-btn4 " type="submit" >Booking</button> --}}
-                    <button type="submit" class="btn btn-danger">Booking</button>
-                    </form>
+                    <button class="btn btn-danger">Booking</button>
                                 </div>
                             </div>
 
                         </div>
 
                   
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                            <h3> Inclusions</h3></a>
+                                    </h4>
+                                </div>
+                                
+                                <div id="collapse4" class="panel-collapse collapse show">
+                                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat.</div>
+                                </div>
+                                <br>
+
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                            <h3> Exclusions</h3></a>
+                                    </h4>
+                                </div>
+                                <div id="collapse2" class="panel-collapse collapse show">
+                                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat.</div>
+                                </div>
+                                <br>
+
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                            <h3> Terms of Service</h3>  </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse3" class="panel-collapse collapse">
+                                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat.</div>
+                                </div>
+                            </div>
                         </div>
+                    </div>
 
 
 
+                </div>
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
 
@@ -329,63 +352,6 @@ ul.timeline>li:before {
                          
                             
                         </aside>
-
-                        <aside class="single_sidebar_widget popular_post_widget">
-                           <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                                            <h3> Inclusions</h3></a>
-                                    </h4>
-                                </div>
-                                
-                                <div id="collapse4" class="panel-collapse collapse show">
-                                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.</div>
-                                    </div>
-                            </div>
-
-                    </aside>
-                        <aside class="single_sidebar_widget popular_post_widget">
-                           <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                                            <h3> Exclusions</h3></a>
-                                    </h4>
-                                </div>
-                                
-                                <div id="collapse4" class="panel-collapse collapse show">
-                                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.</div>
-                                </div>
-
-                            </div>
-
-                    </aside>
-                        <aside class="single_sidebar_widget popular_post_widget">
-                           <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                                            <h3> Terms Of Services</h3></a>
-                                    </h4>
-                                </div>
-                                
-                                <div id="collapse4" class="panel-collapse collapse show">
-                                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.</div>
-                                </div>
-
-                            </div>
-
-                    </aside>
 
 
                     </div>

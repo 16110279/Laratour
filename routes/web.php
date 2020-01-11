@@ -32,8 +32,15 @@ use App\Destination;
 
 Route::get('tour/{slug}','TourPackagesController@slug');
 
+
 // Route::get('/urlslug', function () {
 //     return view('urlslug');
+// });
+
+Route::post('tour/booking' ,'TourPackagesController@add');
+
+// Route::post('tour/{slug}/booking', function () {
+//     // return view('urlslug');
 // });
 
 
@@ -58,5 +65,24 @@ Route::get('/dev', function () {
     $itineraries = ItineraryContent::all();
    
     return view('slug',compact('destination','price','tour','itineraries','schedule'));
+
+});
+
+Route::get('/jaka', function () {
+
+
+    $tour = Tour::with('destination.countries')->where('id',1)->first();
+    $destination = Destination::with('countries')->get();
+        // @dump($tour->destination);
+    // $tour->destination()->attach(3);
+    // $tour->destination()->detach(1);
+    // dd($tour->destination);
+    
+    $schedule = TourSchedule::all();
+
+    $price = TourPricing::where('tour_id',1)->get();
+    $itineraries = ItineraryContent::all();
+   
+    return view('jaka',compact('destination','price','tour','itineraries','schedule'));
 
 });

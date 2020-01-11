@@ -96,6 +96,21 @@ class TourPackagesController extends Controller
         return view('detail',compact('value'));
     }
 
+    public function add(Request $request)
+    {
+        $data = array(
+            'date_id' => $request->tanggal,
+            'id' => $request->id,
+            'price' => $request->price,
+            'qty' => $request->qty,
+        );
+    
+        return response()->json([
+            'data' => $data,
+        ]);
+
+    }
+
     public function slug($slug)
     {
         

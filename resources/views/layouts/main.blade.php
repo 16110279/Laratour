@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/slicknav.css')}}">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css')}}">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
 
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <!-- <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}"> -->
@@ -283,16 +283,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{asset('assets/js/gijgo.min.js')}}"></script>
     <script src="{{asset('assets/js/slick.min.js')}}"></script>
    
-    <script>
-        function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-        </script>
     
     <!--contact js-->
     <script src="{{asset('assets/js/contact.js')}}"></script>
