@@ -230,43 +230,34 @@ ul.timeline>li:before {
 
         <form action="{{url('tour/booking')}}" method="POST">
      <div class="form-group">
-    <select class="form-control" name="tanggal" id="exampleFormControlSelect1">
+    <select class="form-control" name="tanggal[]" id="exampleFormControlSelect1">
         {{-- @dump($schedule) --}}
             <option disabled selected>Tanggal Keberangkatan</option>
 @foreach ($schedule as $scd)
-    <option value="{{$scd->id}}">{{$scd->date_start}}</option>  
+    <option value="{{$scd->id}}">{{$scd->date_start}}</option>
 @endforeach
     </select>
   </div>
-
-    <input type="text" name="tour_id" value="{{$tour->id}}" hidden>
-            @foreach ($price as $key => $value)
-    
-                 <tr><td>{{ $value->name }}</td>
+            @foreach ($price as $prc)
+                 <tr><td>{{ $prc->name }}</td>
                          <td>
                              @csrf
-
-                    <input type="text" name="data[{{ $key }}][id]"  value="{{ $value->id }}" class="id form-control" hidden>
-                    <input type="text" name="data[{{ $key }}][price]"  value="{{ $value->price }}" class="price form-control">
+                    <input type="text" name="id[]"  value="{{ $prc->id }}" class="id form-control" hidden>
+                    <input type="text" name="price[]"  value="{{ $prc->price }}" class="price form-control">
                 </td>
                 <td>
 
-                    <input type="number"  min="0" name="data[{{ $key }}][qty]" class="qty form-control" placeholder="QTY">
+                    <input type="number"  min="0" name="qty[]" class="qty form-control" placeholder="QTY">
                 </td>
                      
                 <td align="center">
                     <h4><span id="amount" class="amount">Rp. 0</span></h4>
                 </td>
-
-            
                       
 
             </tr>
             @endforeach
 
-
-
-                    <input type="number" name="totalinput" class="totalinput" hidden>
             
 
           
@@ -473,8 +464,6 @@ ul.timeline>li:before {
                     $(this).find('.amount').text('Rp.'+amount);
                 });
                 $('.total').text('Rp.'+sum);
-                $('.totalinput').val(sum);
-
             }
         </SCRIPT>
     @endsection

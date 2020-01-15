@@ -38,6 +38,7 @@ Route::get('tour/{slug}','TourPackagesController@slug');
 // });
 
 Route::post('tour/booking' ,'TourPackagesController@add');
+Route::post('tour/booking/save-booking' ,'BookingController@store');
 
 // Route::post('tour/{slug}/booking', function () {
 //     // return view('urlslug');

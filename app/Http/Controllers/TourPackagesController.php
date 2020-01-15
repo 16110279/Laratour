@@ -98,16 +98,20 @@ class TourPackagesController extends Controller
 
     public function add(Request $request)
     {
-        $data = array(
-            'date_id' => $request->tanggal,
-            'id' => $request->id,
-            'price' => $request->price,
-            'qty' => $request->qty,
-        );
+ 
+        $total_biaya = $request->totalinput;
+        $date = $request->tanggal;
+            $data = $request->data;
+
+            $tour = Tour::where('id',$request->tour_id)->first();
     
-        return response()->json([
-            'data' => $data,
-        ]);
+            // @dump($data);
+
+        // return response()->json([
+        //     'data' => $data,
+        // ]);
+
+        return view('booking-step1', compact('total_biaya','data','date','tour','total_biaya'));
 
     }
 
