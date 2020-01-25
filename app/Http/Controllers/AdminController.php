@@ -24,7 +24,15 @@ class AdminController extends Controller
      */
     public function index()
     {
-     
+        $menu = 'Dashboard';
+        return view('admin.dashboard', compact('menu'));
+    }
+
+    public function allbooking()
+    {
+        $booking = Bookings::all();
+        $menu = 'Booking';
+        return view('admin.booking', compact('menu','booking'));
     }
 
     public function managetour()

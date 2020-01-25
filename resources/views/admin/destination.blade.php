@@ -30,7 +30,6 @@
                   <th>Image</th>
                   <th>Name</th>
                   <th>Country</th>
-                  <th>Deskripsi</th>
                   <th width="10%">Action</th>
                   {{-- <th>CSS grade</th> --}}
                 </tr>
@@ -83,7 +82,7 @@ $.ajaxSetup({
       "paging": true,
       "lengthChange": false,
       "searching": false,
-      "ordering": true,
+      "ordering": false,
       "info": true,
       "autoWidth": false,
     });
@@ -215,7 +214,7 @@ $(document).ready(function(){
      paging: true,
       lengthChange: false,
       searching: true,
-      ordering: true,
+      ordering: false,
       info: true,
       autoWidth: false,
   processing: true,
@@ -238,13 +237,8 @@ $(document).ready(function(){
    },
    {
     data: 'countries.name',
-    name: 'country'
+    name: 'country_id'
    },
-   {
-    data: 'desc',
-    name: 'desc'
-   },
-   
    {
     data: 'action',
     name: 'action',

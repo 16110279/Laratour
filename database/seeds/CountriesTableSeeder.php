@@ -15,10 +15,14 @@ class CountriesTableSeeder extends Seeder
     DB::table('countries')->delete();
     
 		$countries = array(
-			array('name' => 'Spanyol'),
-			array('name' => 'Jepang'),
 			array('name' => 'Indonesia'),
-			array('name' => 'Korea'),
+      array('name' => 'Dubai'),
+			array('name' => 'Rusia'),
+			array('name' => 'Yunani'),
+			array('name' => 'Prancis'),
+			array('name' => 'Italia'),
+			array('name' => 'Jepang'),
+			array('name' => 'Korea Selatan'),
 			// array('name' => 'United States'),
 	
 		);

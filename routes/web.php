@@ -48,6 +48,7 @@ Route::get('booking/{codeid}','BookingController@show');
 
 // route::get('/destination','MainController@destination');
 route::get('/','MainController@index');
+route::get('/travel-destination','MainController@traveldestination');
 // route::get('/group-tour/{tour}','TourPackagesController@detail');
 
 
@@ -111,6 +112,7 @@ Route::post('dynamic-field/insert', 'DynamicFieldController@insert')->name('dyna
 // Route::post('dynamic-field/insert', 'DynamicFieldController@insert')->name('dynamic-field.insert');
 
 Route::resource('dst-ajax', 'DestinationController');
+Route::resource('booking-ajax', 'BookingController');
 // Route::get('admin-ajax/{id}/editdestination', 'AdminController@')->name('admin-ajax.managedestination');
 
 
@@ -120,6 +122,8 @@ Route::get('admin/destination','DestinationController@index');
 Route::post('dst-ajax/update', 'DestinationController@update')->name('dst-ajax.update');
 Route::delete('dst-ajax/destroy/{id}', 'DestinationController@destroy');
 
+Route::get('admin/booking', 'BookingController@index');
+Route::get('admin/', 'AdminController@index');
 
 Route::resource('ajax-crud', 'AjaxCrudController');
 

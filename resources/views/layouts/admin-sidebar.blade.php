@@ -203,7 +203,7 @@
                with font-awesome or any other icon font library -->
       
           <li class="nav-item">
-            <a href="../widgets.html')}}" class="nav-link">
+          <a href="{{url('admin/')}}" class="nav-link <?php if($menu == 'Dashboard') { echo 'active'; } ?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -230,7 +230,7 @@
           </li>
       
             <li class="nav-item">
-            <a href="{{url('/admin/destination')}}" class="nav-link <?php if($menu == 'Booking') { echo 'active'; } ?>">
+            <a href="{{url('/admin/booking')}}" class="nav-link <?php if($menu == 'Booking') { echo 'active'; } ?>">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Booking

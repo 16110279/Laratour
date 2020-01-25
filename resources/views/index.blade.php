@@ -101,7 +101,7 @@
                             <img src="{{asset('assets/img/destination/1.png')}}" alt="">
                         </div>
                         <div class="content">
-                            <p class="d-flex align-items-center">Italy <a href="travel_destination.html">  07 Places</a> </p>
+                            <p class="d-flex align-items-center">Italy <a href="{{url('/travel_destination')}}">  07 Places</a> </p>
                             
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                             <img src="{{asset('assets/img/destination/2.png')}}" alt="">
                         </div>
                         <div class="content">
-                            <p class="d-flex align-items-center">Brazil <a href="travel_destination.html">  03 Places</a> </p>
+                            <p class="d-flex align-items-center">Brazil <a href="{{url('/travel_destination')}}">  03 Places</a> </p>
                             
                         </div>
                     </div>
@@ -123,7 +123,7 @@
                             <img src="{{asset('assets/img/destination/3.png')}}" alt="">
                         </div>
                         <div class="content">
-                            <p class="d-flex align-items-center">America <a href="travel_destination.html">  10 Places</a> </p>
+                            <p class="d-flex align-items-center">America <a href="{{url('/travel_destination')}}">  10 Places</a> </p>
                             
                         </div>
                     </div>
@@ -134,7 +134,7 @@
                             <img src="{{asset('assets/img/destination/4.png')}}" alt="">
                         </div>
                         <div class="content">
-                            <p class="d-flex align-items-center">Nepal <a href="travel_destination.html">  02 Places</a> </p>
+                            <p class="d-flex align-items-center">Nepal <a href="{{url('/travel_destination')}}">  02 Places</a> </p>
                             
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                             <img src="{{asset('assets/img/destination/5.png')}}" alt="">
                         </div>
                         <div class="content">
-                            <p class="d-flex align-items-center">Maldives <a href="travel_destination.html">  02 Places</a> </p>
+                            <p class="d-flex align-items-center">Maldives <a href="{{url('/travel_destination')}}">  02 Places</a> </p>
                             
                         </div>
                     </div>
@@ -156,7 +156,7 @@
                             <img src="{{asset('assets/img/destination/6.png')}}" alt="">
                         </div>
                         <div class="content">
-                            <p class="d-flex align-items-center">Indonesia <a href="travel_destination.html">  05 Places</a> </p>
+                            <p class="d-flex align-items-center">Indonesia <a href="{{url('/travel_destination')}}">  05 Places</a> </p>
                             
                         </div>
                     </div>

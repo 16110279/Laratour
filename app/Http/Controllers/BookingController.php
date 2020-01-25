@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Boooking;
 use App\TourPricing;
 use App\BookingItems;
 use App\Bookings;
@@ -16,8 +17,26 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+      $booking = Bookings::all();
+        $menu = 'Booking';
+           if(request()->ajax())
+        {
+            return datatables()->of(Bookings::with('BookingItems')->latest()->get())
+                    ->addColumn('action', function($data){
+                        $button = '<button type="button" name="edit" id="'.$data->id.'" class="edit btn btn-success btn-sm"><li class="fas fa-pencil-alt"></li></button>';
+                        $button .= '&nbsp;&nbsp;';
+                         $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><li class="fas fa-trash"></li></button>';
+
+                        // $button .= '<button type="button" name="delete" onclick="deleteAction('.$data->id.')" class="delete btn btn-danger btn-sm">Delete</button>';
+                        return $button;
+                    })
+                    ->rawColumns(['action'])
+                    ->make(true);
+        }
+        return view('admin.booking', compact('booking', 'menu'));
+
     }
+    
 
     /**
      * Show the form for creating a new resource.

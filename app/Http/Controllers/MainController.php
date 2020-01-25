@@ -20,6 +20,11 @@ class MainController extends Controller
         return view('index', compact('grouptour','individualtour'));
     }
 
+    public function traveldestination()
+    {
+        return view('traveldestination');
+    }
+
 
     /**
      * Show the form for creating a new resource.
