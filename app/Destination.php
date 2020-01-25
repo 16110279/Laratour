@@ -8,6 +8,14 @@ class Destination extends Model
 {
     //
 
+    protected $fillable =
+    [
+        'name',
+        'desc',
+        'country_id',
+        'image',
+    ];
+
     protected $table = 'destinations';
 
     public function countries()

@@ -62,9 +62,8 @@ class BookingController extends Controller
 
             $booking = new Bookings;
     
-            $prefix = 'TRV';
             $date = Carbon::now()->format('dmY');
-            $booking->booking_code = ($prefix) . '' . ($date) . '-' . (Carbon::now()->timestamp + rand(1, 1000));
+            $booking->booking_code = ($date) . '' . (Carbon::now()->timestamp + rand(1, 1000));
             $booking->name = $request->name;
             $booking->phone = $request->phone;
             $booking->email = $request->email;
@@ -116,7 +115,8 @@ class BookingController extends Controller
      */
     public function show($id)
     {
-        //
+        $booking = Bookings::with('bookingItems')->where('booking_code',$id)->first();
+        return view('booking-step2',compact('booking'));
     }
 
     /**

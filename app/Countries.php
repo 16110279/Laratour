@@ -13,4 +13,9 @@ class Countries extends Model
     {
         return $this->hasMany('App\Destination','id');
     }
+
+    public function country()
+    {
+        return $this->belongsTo('App\Tour');
+    }
 }

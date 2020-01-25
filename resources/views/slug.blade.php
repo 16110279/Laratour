@@ -1,101 +1,112 @@
-{{-- {{ $tour->name }} <br>
-{{ $tour->category }} --}}
+<html>
+ <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laravel 5.8 - DataTables Server Side Processing using Ajax</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- date-range-picker -->
+<script src="{{asset('admin-assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
+ </head>
+ <body>
+  <div class="container">    
+     <br />
+     <h3 align="center">Dynamically Add / Remove input fields in Laravel 5.8 using Ajax jQuery</h3>
+     <br />
+   <div class="table-responsive">
+                <form method="post" id="dynamic_form">
+                 <span id="result"></span>
+                 <table class="table table-bordered table-striped" id="user_table">
+               <thead>
+                <tr>
+                    <th width="35%">Date Start</th>
+                    <th width="35%">Date End</th>
+                    <th width="30%">Action</th>
+                </tr>
+               </thead>
+               <tbody>
 
-{{-- if($) --}}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-
-
-    
-    {{ $tour->name }}
-
-        <h1> Schedule </h1>
-    @foreach ($schedule as $sdl)
-        {{ $sdl->date_start }} - {{ $sdl->date_end }} <br>
-    @endforeach
-    {{-- @dump($itineraries) --}}
-
-    <h1> Destinasi </h1>
-
-    @foreach ($tour->destination as $dst)
-    {{ $dst->name }} <br>
-        
-    @endforeach
-
-    <h1> Harga </h1>
-
-    @foreach ($price as $prc)
-        {{ $prc->name }} - Rp. {{ $prc->price }} <br>
-    @endforeach
-
-    <h1> Itineraries </h1>
-    @foreach ($itineraries as $itn)
-        {{ $itn->title }} - {{ $itn->content }} <br>
-    @endforeach
-
-    <h1> Order Sekarang </h1>
-
-    <form>
-        <div class="form-group">
-    <label for="exampleFormControlSelect1">Pilih Tanggal</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-        @foreach ($schedule as $sdlopt)
-                  <option>{{$sdlopt->date_start}} Sampai {{$sdlopt->date_end}}</option>
-        @endforeach
-    </select>
+               </tbody>
+               <tfoot>
+                <tr>
+                                <td colspan="2" align="right">&nbsp;</td>
+                                <td>
+                  @csrf
+                  <input type="submit" name="save" id="save" class="btn btn-primary" value="Save" />
+                 </td>
+                </tr>
+               </tfoot>
+           </table>
+                </form>
+   </div>
   </div>
-        <br> 
-    {{-- <label for="exampleFormControlInput1"> {{ $prc->name }} - Rp. {{ $prc->price }}</label> --}}
-
-         <div class="form-group">
-        
-        @foreach ($price as $prc)
-
-         <input type="number" name="id[]" class="id" value="{{$prc->id}}">
-         <input type="number" name="harga[]" class="harga" value="{{$prc->price}}">
-         <input type="number" name="qty[]" class="qty">
-         <br>
-
-        @endforeach
-
-            
-
-  </div>
-        
-        <br> 
-    </form>
-
-
-
-</body>
+ </body>
 </html>
-     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous">
-    </script>
 
 <script>
-
 $(document).ready(function(){
-   $(".harga").blur(function() {
-           var sum = 0;
-    $(".harga").each(function() {
 
-        sum += Number($(this).val());
+ var count = 1;
 
-            });
-            console.log(sum)
-   })
+ dynamic_field(count);
+
+ function dynamic_field(number)
+ {
+  html = '<tr>';
+        html += '<td><input type="date" name="date_start[]" class="form-control" /></td>';
+        html += '<td><input type="date" name="date_end[]" class="form-control" /></td>';
+        if(number > 1)
+        {
+            html += '<td><button type="button" name="remove" id="" class="btn btn-danger remove">Remove</button></td></tr>';
+            $('tbody').append(html);
+        }
+        else
+        {   
+            html += '<td><button type="button" name="add" id="add" class="btn btn-success">Add</button></td></tr>';
+            $('tbody').html(html);
+        }
+ }
+
+ $(document).on('click', '#add', function(){
+  count++;
+  dynamic_field(count);
+ });
+
+ $(document).on('click', '.remove', function(){
+  count--;
+  $(this).closest("tr").remove();
+ });
+
+ $('#dynamic_form').on('submit', function(event){
+        event.preventDefault();
+        $.ajax({
+            url:'{{ route("dynamic-field.insert") }}',
+            method:'post',
+            data:$(this).serialize(),
+            dataType:'json',
+            beforeSend:function(){
+                $('#save').attr('disabled','disabled');
+            },
+            success:function(data)
+            {
+                if(data.error)
+                {
+                    var error_html = '';
+                    for(var count = 0; count < data.error.length; count++)
+                    {
+                        error_html += '<p>'+data.error[count]+'</p>';
+                    }
+                    $('#result').html('<div class="alert alert-danger">'+error_html+'</div>');
+                }
+                else
+                {
+                    dynamic_field(1);
+                    $('#result').html('<div class="alert alert-success">'+data.success+'</div>');
+                }
+                $('#save').attr('disabled', false);
+            }
+        })
+ });
+
 });
-
-  
-
 </script>

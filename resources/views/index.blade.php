@@ -207,7 +207,7 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center mb_70">
-                        <h3>Popular Places</h3>
+                        <h3>Popular d Places</h3>
                         <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
                     </div>
                 </div>
@@ -219,12 +219,12 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_place">
                         <div class="thumb">
-                            <img src="{{asset('assets/img/place/1.png')}}" alt="">
+                            <img src="{{url('img/'.$gt->img)}}" alt="">
                         <a href="#" class="prise">Start From</a>
                         </div>
                         <div class="place_info">
                             <a href="{{url('tour/'.$gt->slug)}}"><h3>{{ $gt->name }}</h3></a>
-                            <p>United State of America</p>
+                        <p>{{$gt->country->name}}</p>
                             <div class="rating_days d-flex justify-content-between">
                                
                                 {{-- <div class="days">
@@ -237,7 +237,7 @@
                 </div>
                                 @endforeach
 
-                                @dump($grouptour)
+                                {{-- @dump($grouptour) --}}
 
         
             </div>

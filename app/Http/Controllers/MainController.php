@@ -15,7 +15,7 @@ class MainController extends Controller
     public function index()
     {
 
-        $grouptour = Tour::all();
+        $grouptour = Tour::with('country')->get();
         $individualtour = Tour::where('category','Individual')->get();
         return view('index', compact('grouptour','individualtour'));
     }

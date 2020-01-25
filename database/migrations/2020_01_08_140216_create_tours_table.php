@@ -17,8 +17,11 @@ class CreateToursTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('slug');
+            $table->string('img');
+            $table->longText('itinerary');
             $table->enum('category', ['Individual', 'Group']);
-            // $table->integer('duration');
+            $table->bigInteger('country_id')->unsigned();
+            $table->foreign('country_id')->references('id')->on('countries')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

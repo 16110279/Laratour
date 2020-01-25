@@ -137,49 +137,39 @@ ul.timeline>li:before {
             <div class="row">
                 <div class="col-lg-8 posts-list">
                     <div class="single-post">
-                        <div class="feature-img">
-                            <img class="img-fluid" src="{{asset('assets/img/blog/single_blog_1.png')}}" alt="">
-                        </div>
-                        <div class="blog_details">
+                                 <div class="blog_details">
                             <h2>{{ $tour->name }}
                             </h2>
+                            <br>
+                            <br>
 
+        
+                        <div class="feature-img">
+                            <img class="img-fluid" src="{{url('img/'.$tour->img)}}" alt="">
+                        </div>
+                        <br>
+                        <br>
+               
                                   <div class="panel-group" id="accordion">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
                                     <h4 class="panel-title">
                                         <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                           <h3> </h3></a>
+                                           <h3>Itineraries</h3></a>
                                     </h4>
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse show">
                                     <div class="panel-body">
 											<br>
 
-                                        <ul class="timeline">
-											@foreach ($itineraries as $itn)
-											<li>
-                                                <b>{{ $itn->title }}</b>
-                                                <p>{{$itn->content}}</p>
-											</li>
+                                            {!! $tour->itinerary !!}
+											{{-- @foreach ($itineraries as $itn)
+										
+                                                {!! $itn->content !!}
+											
 											<br>
-											@endforeach
+											@endforeach --}}
 
-											{{-- @dump($itineraries) --}}
-                           
-                                            {{-- <li>
-                                                Day 2
-                                                <p>Curabitur purus sem, malesuada eu luctus eget, suscipit sed turpis.
-                                                    Nam pellentesque felis vitae justo
-                                                    accumsan, sed semper nisi sollicitudin...</p>
-                                            </li>
-                                            <li>
-                                                Day 3
-                                                <p>Fusce ullamcorper ligula sit amet quam accumsan aliquet. Sed nulla
-                                                    odio, tincidunt vitae nunc vitae, mollis
-                                                    pharetra velit. Sed nec tempor nibh...</p>
-                                            </li> --}}
-                                        </ul>
 
                                     </div>
                                 </div>
@@ -187,26 +177,8 @@ ul.timeline>li:before {
 
                             </div>
 
-                            {{-- <p class="excert">
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you
-                                should have to spend money on boot camp when you can get the MCSE study materials
-                                yourself at a
-                                fraction of the camp price. However, who has the willpower
-                            </p>
-                            <p>
-                                MCSE boot camps have its supporters and its detractors. Some people do not understand
-                                why you
-                                should have to spend money on boot camp when you can get the MCSE study materials
-                                yourself at a
-                                fraction of the camp price. However, who has the willpower to actually sit through a
-                                self-imposed MCSE training. who has the willpower to actually
-                            </p> --}}
-    
-
                                                     <br>
-
-                        <h3>Tour Pricing</h3>
+    <h3>Tour Pricing</h3>
 
                         <br>
 <table id="penjualan" class="table table-responsive table-hover">
@@ -229,28 +201,25 @@ ul.timeline>li:before {
         <tbody>
 
         <form action="{{url('tour/booking')}}" method="POST">
-     <div class="form-group">
-    <select class="form-control" name="tanggal" id="exampleFormControlSelect1">
-        {{-- @dump($schedule) --}}
-            <option disabled selected>Tanggal Keberangkatan</option>
-@foreach ($schedule as $scd)
-    <option value="{{$scd->id}}">{{$scd->date_start}}</option>  
-@endforeach
-    </select>
-  </div>
+            <div class="form-group">
+                <select class="form-control" name="tanggal" id="exampleFormControlSelect1">
+                        <option disabled selected>Tanggal Keberangkatan</option>
+                            @foreach ($schedule as $scd)
+                               <option value="{{$scd->id}}">{{$scd->date_start}}</option>  
+                            @endforeach
+                </select>
+            </div>
 
     <input type="text" name="tour_id" value="{{$tour->id}}" hidden>
             @foreach ($price as $key => $value)
     
                  <tr><td>{{ $value->name }}</td>
-                         <td>
+                 <td>
                              @csrf
-
                     <input type="text" name="data[{{ $key }}][id]"  value="{{ $value->id }}" class="id form-control" hidden>
                     <input type="text" name="data[{{ $key }}][price]"  value="{{ $value->price }}" class="price form-control">
                 </td>
                 <td>
-
                     <input type="number"  min="0" name="data[{{ $key }}][qty]" class="qty form-control" placeholder="QTY">
                 </td>
                      
@@ -258,26 +227,17 @@ ul.timeline>li:before {
                     <h4><span id="amount" class="amount">Rp. 0</span></h4>
                 </td>
 
-            
-                      
-
             </tr>
             @endforeach
-
-
-
                     <input type="number" name="totalinput" class="totalinput" hidden>
-            
-
           
         </tbody>
-        
         </table>
-                                 {{-- <button class="boxed-btn4 " type="submit" >Booking</button> --}}
-                    <button type="submit" class="btn btn-danger">Booking</button>
+                <button type="submit" class="btn btn-danger">Booking</button>
                     </form>
-                                </div>
-                            </div>
+                 
+                    </div>
+                    </div>
 
                         </div>
 
@@ -323,7 +283,7 @@ ul.timeline>li:before {
 							    @foreach ($tour->destination as $dst)
 								
 									   <div class="media post_item">
-                                <img src="{{asset('assets/img/post/post_1.png')}}" alt="post">
+                                <img src="{{url('img/destination/'.$dst->img)}}" alt="post" height="80" width="80">
                                 <div class="media-body">
                                     <a href="single-blog.html">
                                         <h3>{{ $dst->name }}</h3>

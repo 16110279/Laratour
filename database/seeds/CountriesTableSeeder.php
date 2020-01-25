@@ -18,6 +18,7 @@ class CountriesTableSeeder extends Seeder
 			array('name' => 'Spanyol'),
 			array('name' => 'Jepang'),
 			array('name' => 'Indonesia'),
+			array('name' => 'Korea'),
 			// array('name' => 'United States'),
 	
 		);

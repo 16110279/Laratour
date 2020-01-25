@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class TourSchedule extends Model
 {
-    //
+    protected $fillable =
+    [
+        'date_start',
+        'date_end',
+        'tour_id',
+    ];
 }
