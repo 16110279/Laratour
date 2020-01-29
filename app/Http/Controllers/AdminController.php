@@ -55,6 +55,8 @@ class AdminController extends Controller
 
     public function edittour($id)
     {
+        $menu = 'Tours';
+        $tour = Tour::where('id',$id)->first();
         $countries = Countries::orderBy('name')->get()->pluck('name', 'id');
         $tourscd = TourSchedule::where('tour_id',$id)->get();
 
@@ -81,18 +83,31 @@ class AdminController extends Controller
 
         // $country = Countries::all();
 
-        return view('admin.edittour',compact('countries','date','tourprice'));
+        return view('admin.edittour',compact('countries','date','tourprice','menu','tour'));
     }
 
 
     public function storetour(Request $request)
     {
-               $tour = Tour::latest('created_at')->first();;
+        $gambar = $this->imageUpload($request);
+
+        $store = Tour::create([
+            'name' => $request->tour_name,
+            'slug' => Str::slug($request->tour_name),
+            'img' => $gambar,
+            'itinerary' => $request->itinerary,
+            'country_id' => $request->country_id ,
+        ]);
+
+        $tour = Tour::latest('created_at')->first();;
         $tour_id = $tour->id;
 
         $str = (explode(",",$request->Dates));
 
-        @dump($str);
+
+        // echo $request->itinerary
+
+        // @dump($str);
     
         // $date = array();
 
@@ -104,11 +119,11 @@ class AdminController extends Controller
             // echo "<br>";
             // echo $newDate;
 
-            //      $date = TourSchedule::create([
-            //          'tour_id' => $tour_id,
-            //      'date_start' => $date,
-            //     'date_end' => $newDate,
-            // ]);
+            $date = TourSchedule::create([
+                 'tour_id' => $tour_id,
+                 'date_start' => $date,
+                'date_end' => $newDate,
+            ]);
 
             
 
@@ -119,7 +134,6 @@ class AdminController extends Controller
 
         
  
-        // $gambar = $this->imageUpload($request);
 
         // if($tour->name == $request->tour_name && $tour->country_id == $request->country_id)
         // {
@@ -150,13 +164,6 @@ class AdminController extends Controller
 
 
 
-        // $store = Tour::create([
-        //     'name' => $request->tour_name,
-        //     'slug' => Str::slug($request->tour_name),
-        //     'img' => $gambar,
-        //     'itinerary' => '',
-        //     'country_id' => $request->country_id ,
-        // ]);
 
    
             # code...
@@ -164,44 +171,31 @@ class AdminController extends Controller
         // $dstArr = array();
 
 
-        // foreach ($request->destination_id as $key => $value) {
+        foreach ($request->destination_id as $key => $value) {
        
-        // $tourdst = TourDestination::create([
-        //         'destination_id' => $value,
-        //         'tour_id' => $tour_id ,
-        // ]);
+        $tourdst = TourDestination::create([
+                'destination_id' => $value,
+                'tour_id' => $tour_id ,
+        ]);
 
 
         // }
     
+        }
+
     foreach ($request->data as $key => $value) {
 
-    // @dump($value);
+          $date = TourPricing::create([
+            'tour_id' => $tour_id,
+            'name' => $value['name'],
+            'price' => $value['price'],
+            ]);
 
-    $cek = TourPricing::where('name',$value['name'])->first();
-    @dump($cek);
-
-
-
-        
-
-        //   $date = TourPricing::create([
-        //     'tour_id' => $tour_id,
-        //     'name' => $value['name'],
-        //     'price' => $value['price'],
-        //     ]);
 
     }
-        // $tourdst = TourDestination::create([
-        //         'destination_id' => $value,
-        //         'tour_id' => $tour_id ,
-        // ]);
-
-            // dump($value);
-
-        
  
-
+        // return redirect('admin/tour/')->with('status', 'Product successfully deleted !');
+        return redirect('admin/tour/');
         
 
     
@@ -275,7 +269,7 @@ class AdminController extends Controller
         //
     }
 
-    private function imageUpload($request, $location = 'img')
+    private function imageUpload($request, $location = 'img/tour/')
     {
         // $product = Product::findOrFail($id);
         $uploadedFile = $request->file('img');

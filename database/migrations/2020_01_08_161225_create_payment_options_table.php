@@ -15,9 +15,10 @@ class CreatePaymentOptionsTable extends Migration
     {
         Schema::create('payment_options', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->decimal('price',20,2);
-            $table->enum('status', ['Belum Dibayar', 'Sudah Dibayar'])->default('Belum Dibayar');
+            $table->string('nama_bank');
+            $table->string('no_rek');
+            $table->string('atas_nama');
+            $table->enum('status', ['Aktif', 'Tidak Aktif'])->default('Aktif');
             $table->timestamps();
         });
     }

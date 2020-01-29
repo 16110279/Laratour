@@ -15,6 +15,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CountriesTableSeeder::class);
         $this->call(DestinationsTableSeeder::class);
         $this->call(TourTableSeeder::class);
+        $this->call(TourScheduleTableSeeder::class);
+        $this->call(TourPricingTableSeeder::class);
+        $this->call(PaymentOptionTableSeeder::class);
         $this->call(TourDestinationTableSeeder::class);
     }
 }

@@ -14,7 +14,7 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Add New Tour</h3>
+              <h3 class="card-title">Edit Tour</h3>
             </div>
 
                                       {{-- @dump($country) --}}
@@ -28,7 +28,7 @@
                   <div class="form-group row">
                     <label for="inputTourName" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                      <input type="text" name="tour_name" class="form-control" id="inputTourName" placeholder="Nama Tour">
+                    <input type="text" name="tour_name" class="form-control" id="inputTourName" placeholder="Nama Tour" value="{{$tour->name}}">
                     </div>
                   </div>
  
@@ -51,8 +51,8 @@
                       <div class="col-sm-10">
                         <select class="form-control" name="category" id="category" style="width: 100%;" data-placeholder="Select a Category">
                           <option value="" selected disabled>Select a Category</option>
-                          <option value="Individual">Individual</option>
-                          <option value="Group">Group</option>
+                          <option value="Individual" @php if($tour->category=='Individual') { echo 'selected'; } @endphp >Individual</option>
+                          <option value="Group" @php if($tour->category=='Group') { echo 'selected'; } @endphp>Group</option>
                         </select>
                     </div>
                 </div>
@@ -64,9 +64,8 @@
 
                           <option value="" hidden></option>
 
-
                           @foreach($countries as $id => $country)
-                                        <option value="{{ $id }}">
+                                        <option @php if($tour->country_id== $id) { echo 'selected'; } @endphp value="{{ $id }}">
                                             {{ $country }}
                                         </option>
                           @endforeach
@@ -84,6 +83,7 @@
                 
                   <select class="select2bs4" multiple="multiple"  name="destination_id[]" id="destination" data-placeholder="Select a Destination"
                           style="width: 100%;">
+                          
         {{-- @if($errors->has('destination_id'))
             <p class="help-block">
                 {{ $errors->first('destination_id') }}
@@ -149,7 +149,7 @@
                     <label for="inputTourDesc" class="col-sm-2 col-form-label">Itineraries</label>
                     <div class="col-sm-10">
                 <textarea id="inputTourDesc" name="itinerary" class="textarea" placeholder="Place some text here"
-                          style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                          style="width: 100%; height: 400px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"> {{$tour->itinerary}}</textarea>
               </div>
         
             </div>

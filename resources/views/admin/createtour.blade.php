@@ -57,6 +57,17 @@ x
                         </select>
                     </div>
                 </div>
+            
+                  <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Tiket Pesawat</label>
+                      <div class="col-sm-10">
+                        <select class="form-control" name="category" id="category" style="width: 100%;" data-placeholder="Select a Category">
+                          <option value="" selected disabled>Select a State</option>
+                          <option value="Termasuk">Termasuk</option>
+                          <option value="Tidak Termasuk">Tidak Termasuk</option>
+                        </select>
+                    </div>
+                </div>
                 <!-- /.form-group -->
                   <div class="form-group row">
                   <label class="col-sm-2 col-form-label">Country</label>
@@ -82,7 +93,7 @@ x
                   <label class="col-sm-2 col-form-label">Destinasi</label>
                    <div class="col-sm-10">
                 
-                  <select class="select2bs4" multiple="multiple"  name="destination_id[]" id="destination" data-placeholder="Select a Destination"
+                  <select class="select2bs4" multiple="multiple"  name="destination_id[]" id="destination" data-placeholder="Select Destinations"
                           style="width: 100%;">
         {{-- @if($errors->has('destination_id'))
             <p class="help-block">

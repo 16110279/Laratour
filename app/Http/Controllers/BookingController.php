@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 use App\Boooking;
 use App\TourPricing;
 use App\BookingItems;
+use App\PaymentOptions;
+use App\Payment;
 use App\Bookings;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Tour;
 
 class BookingController extends Controller
 {
@@ -81,7 +84,7 @@ class BookingController extends Controller
 
             $booking = new Bookings;
     
-            $date = Carbon::now()->format('dmY');
+            $date = Carbon::now()->format('Y');
             $booking->booking_code = ($date) . '' . (Carbon::now()->timestamp + rand(1, 1000));
             $booking->name = $request->name;
             $booking->phone = $request->phone;
@@ -92,12 +95,19 @@ class BookingController extends Controller
             
             $booking_item = $booking->BookingItems()->saveMany($bookingArr);
 
-            return response()->json([
-                'status' => true,
-                'message' => 'Data Stored',
-                'data' => $booking,
-                'transaction_item' => $booking_item
-            ]);
+            $booking = Bookings::latest('created_at')->first();;
+
+
+        return redirect('tour/booking/'.$booking->booking_code);
+        // return redirect('/'.$booking->booking_code);
+
+
+            // return response()->json([
+            //     'status' => true,
+            //     'message' => 'Data Stored',
+            //     'data' => $booking,
+            //     'transaction_item' => $booking_item
+            // ]);
 
         
                     @dump($total);
@@ -132,10 +142,32 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    // public function show($id)
+    // {
+    //     $booking = Bookings::with('bookingItems')->where('booking_code',$id)->first();
+    //     return view('booking-step2',compact('booking'));
+    // }
+
+    public function bookingpayment($id)
     {
+        $payment = PaymentOptions::all();
         $booking = Bookings::with('bookingItems')->where('booking_code',$id)->first();
-        return view('booking-step2',compact('booking'));
+        $payment_check = Payment::where('booking_id',$booking->id)->get();
+        $pay = Payment::where('booking_id',$booking->id)->first();
+        // @dump($payment_check);
+
+        if($payment_check->isEmpty())
+        {
+        return view('booking-step2',compact('booking','payment'));
+        }
+
+        if($payment_check->isNotEmpty())
+        {
+        return view('booking-step3',compact('booking','pay'));
+        }
+
+        // if($booking->)
+        // return view('booking-step2',compact('booking','payment'));
     }
 
     /**

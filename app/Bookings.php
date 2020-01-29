@@ -16,12 +16,17 @@ class Bookings extends Model
         'user_id',
         'total',
         // 'payment_option_id',
-        'payment_status',
+        // 'payment_status',
         'status',
     ];
 
      public function BookingItems()
     {
         return $this->hasMany('App\BookingItems', 'booking_id');
+    }
+
+    public function payment()
+    {
+        return $this->belongsTo('App\Payment', 'id');
     }
 }

@@ -41,7 +41,7 @@
                     <tr>
 
                     <td>{{$no++}}</td>
-                    <td><img src="{{url('/img/'.$tr->img)}}" width="40"/></td>
+                    <td><img src="{{url('/img/tour/'.$tr->img)}}" width="40"/></td>
                     <td>{{$tr->name}}</td>
                     <td>{{$tr->country->name}}</td>
                     <td>{{$tr->category}}</td>

@@ -87,38 +87,49 @@ class TourPackagesController extends Controller
         //
     }
 
-    public function detail(Tour $tour)
-    {
+    // public function detail(Tour $tour)
+    // {
         // $url = $url_slug;
-        $value = $tour->id;
+        // $value = $tour->id;
         // $value = Tour::where('url_slug', $tour->$url_slug)->first();
         // $value = TourDestination::where('tour_id',6)->get();
-        return view('detail',compact('value'));
-    }
+    //     return view('detail',compact('value'));
+    // }
 
     public function add(Request $request)
     {
  
         $total_biaya = $request->totalinput;
-        $date = $request->tanggal;
-            $data = $request->data;
+        $date =  TourSchedule::where('id',$request->tanggal)->first();
+        $data = $request->data;
 
-            $tour = Tour::where('id',$request->tour_id)->first();
+        $tour = Tour::with('country')->where('id',$request->tour_id)->first();
+        $items = array();
+
+        foreach ($request->data as $key => $value) {
+            // echo $value['price'];
+            if($value['qty'] != 0)
+            {
+               $items[] = $value;
+            }
+            // echo $value;
+        }
     
-            // @dump($data);
+        // @dump($items);
 
         // return response()->json([
         //     'data' => $data,
         // ]);
 
-        return view('booking-step1', compact('total_biaya','data','date','tour','total_biaya'));
+    
+        return view('booking-step1', compact('total_biaya', 'items' , 'date','tour','total_biaya'));
 
     }
 
     public function slug($slug)
     {
         
-    $tour = Tour::where('slug',$slug)->first();
+    $tour = Tour::with('country')->where('slug',$slug)->first();
         $itineraries = ItineraryContent::all();
 
     $dest = TourDestination::where('tour_id',$tour->id)->get();

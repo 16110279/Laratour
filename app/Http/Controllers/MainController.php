@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Destination;
 use App\Tour;
+use App\Countries;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -20,9 +21,35 @@ class MainController extends Controller
         return view('index', compact('grouptour','individualtour'));
     }
 
-    public function traveldestination()
+    public function traveldestination(Request $request)
     {
-        return view('traveldestination');
+        $country = Countries::all();
+
+        if($request->has('category') && $request->has('countries'))
+        {
+            $tour = Tour::with('country')->where('category',$request->category)->where('country_id',$request->countries)->get();
+            return view('traveldestination', compact('tour','country'));
+
+            // @dump($tour); 
+        // return view('traveldestination',  ["tour"=>\App\Tour::paginate(9)]);
+        }
+
+            if($request->has('countries'))
+    {
+                    $tour = Tour::with('country')->where('country_id',$request->countries)->get();
+                return view('traveldestination', compact('tour','country'));
+
+                }
+
+
+        else {
+            $tour = Tour::with('country')->get();
+                        return view('traveldestination', compact('tour','country'));
+
+        }
+
+        dump($tour);
+
     }
 
 
@@ -99,7 +126,8 @@ class MainController extends Controller
 
     public function destination()
     {
-        $dst = Destination::with('countries')->get();
-        return view('destination', compact('dst'));
+        // $dst = Destination::with('countries')->get();
+        return view('destination',  ["dst"=>\App\Destination::paginate(9)]);
+       
     }
 }

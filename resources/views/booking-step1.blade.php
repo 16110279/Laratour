@@ -1,6 +1,6 @@
 	@extends('layouts.main')
     @section('content')
-
+<br>
         <!-- ================ contact section start ================= -->
     {{-- <section class="contact-section"> --}}
             <div class="container">    
@@ -26,7 +26,7 @@
 
                                 <div class="col-12">
                                     <div class="form-group">
-                                        <input class="form-control" type="text" name="phone" id="phone" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                                        <input class="form-control" type="text" name="phone" id="phone" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Phone Number'" placeholder="Enter Phone Number">
                                     </div>
                                 </div>
                                 <div class="col-12">
@@ -37,7 +37,7 @@
 
                                 <input type="text" name="tourid" value="{{$tour['id']}}" hidden>
 
-                                @foreach ($data as $key => $item)
+                                @foreach ($items as $key => $item)
                                 <?php
                                 if($item['qty'] != '')
                                 { ?>
@@ -52,8 +52,6 @@
 
                             </div>
                             <div class="form-group mt-3">
-                                                    <button type="submit" class="btn btn-danger">Booking</button>
-
                                 <button type="submit" class="button button-contactForm boxed-btn">Send</button>
                             </div>
                         </form>
@@ -61,18 +59,25 @@
                     <div class="col-lg-3 offset-lg-1">
                         <h3>Booking Summary</h3>
                         <br>
-                        <b>{{ $tour->name }}</b>
-                        <br> 
-                        <br> 
+                        {{-- @dump($date) --}}
+                        Nama : {{ $tour->name }} <br>
                         Tour Duration : <br>
-                        Category : <br>
-                        Departure : <br>
-                        Flight : <br><br>
+                        Category : {{ $tour->category }} <br>
+                        Departure : {{ $date->date_start }} <br>
+                        <br>
+                        {{-- @dum p($items) --}}
+                        @foreach ($items as $key => $val)
+                            {{-- @dump($val['price']) --}}
+                    {{ $val['name'] }} - {{ $val['qty']  }} x  - Rp. {{  $val['price']   }} <br>
+                        @endforeach
+
+                        <br>
                          <h3>Total : Rp. {{ $total_biaya }} </h3>
                     </div>
                 </div>
             </div>
         {{-- </section> --}}
     <!-- ================ contact section end ================= -->
-
+<br>
+<br>
     @endsection

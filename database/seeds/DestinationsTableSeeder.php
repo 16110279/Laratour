@@ -38,7 +38,6 @@ class DestinationsTableSeeder extends Seeder
 			array('name' => 'Big Red', 'image' => 'big-red-dune.jpg','country_id' => 2),
 			array('name' => 'Dubai Museum', 'image' => 'dubai-museum.jpg','country_id' => 2),
 			array('name' => 'Dubai Miracle Garden', 'image' => 'dubai-miracle-garden.jpg','country_id' => 2),
-			array('name' => 'Naif Market', 'image' => '','country_id' => 2),
 			array('name' => 'Kremlin', 'image' => 'kremlin.jpg','country_id' => 3),
 			array('name' => 'Saint Basil’s Cathedral', 'image' => 'Katedral-santa-Basil.jpg','country_id' => 3),
 			array('name' => 'Red Square', 'image' => 'Moscow-Red-Square.jpg','country_id' => 3),

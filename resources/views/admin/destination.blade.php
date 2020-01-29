@@ -133,13 +133,13 @@ $.ajaxSetup({
                 <!-- /.form-group -->
            
          
-           <div class="form-group row">
+           {{-- <div class="form-group row">
             <label class="control-label col-md-2"> Desc </label>
             <div class="col-md-10">
-                <textarea class="form-control" name="desc" id="desc" cols="30" rows="10"></textarea>
+                <textarea class="form-control" name="desc" id="desc" cols="30" rows="10"></textarea> --}}
              {{-- <input type="text" name="desc" id="desc" class="form-control" /> --}}
-            </div>
-           </div>
+            {{-- </div>
+           </div> --}}
            <div class="form-group row">
             <label class="control-label col-md-2">Poster </label>
             <div class="col-md-10">
@@ -188,13 +188,17 @@ $.ajaxSetup({
 
 <script>
           $('#formModal').on('hidden.bs.modal', function () {
-                // console.log("Reset Modal");
+                // $(".modal-body").html("");
+   
+            // console.log("Reset Modal");
                 $("#name").val('');
-                $("#countryID").val('');
-                $("#countryID").val('');
-                $("#desc").val('');
+                // $('#img-thumbnail').empty();
+
+                $("#country_id").val('');
+                // $("#countryID").val('');
+                // $("#desc").val('');
                 $("#image").val('');
-                $("#img-thumbnail").val('');
+                // $("#img-thumbnail").val('');
             });
 </script>
 <script>
@@ -344,7 +348,7 @@ $(document).ready(function(){
     $('#countryID').val(html.data.countries.id).change();
 
     console.log(html.data)
-    $('#desc').val(html.data.desc);
+    // $('#desc').val(html.data.desc);
     $('#store_image').html("<img src={{ URL::to('/') }}/img/destination/" + html.data.image + " width='150' class='img-thumbnail' />");
     $('#store_image').append("<input type='hidden' name='hidden_image' value='"+html.data.image+"' />");
     $('#hidden_id').val(html.data.id);

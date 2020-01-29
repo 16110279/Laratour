@@ -39,8 +39,10 @@ Route::get('tour/{slug}','TourPackagesController@slug');
 // });
 
 Route::post('tour/booking' ,'TourPackagesController@add');
+Route::post('tour/booking/save-payment' ,'PaymentController@store');
 Route::post('tour/booking/save-booking' ,'BookingController@store');
-Route::get('booking/{codeid}','BookingController@show');
+Route::get('tour/booking/{codeid}' ,'BookingController@bookingpayment');
+// Route::get('booking/{codeid}','BookingController@show');
 // Route::post('tour/{slug}/booking', function () {
 //     // return view('urlslug');
 // });
@@ -49,6 +51,7 @@ Route::get('booking/{codeid}','BookingController@show');
 // route::get('/destination','MainController@destination');
 route::get('/','MainController@index');
 route::get('/travel-destination','MainController@traveldestination');
+route::get('/destination','MainController@destination');
 // route::get('/group-tour/{tour}','TourPackagesController@detail');
 
 

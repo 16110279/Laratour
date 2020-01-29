@@ -58,7 +58,7 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="search_wrap">
-                        <form class="search_form" action="#">
+                    <form class="search_form" method="GET" action="{{url('/travel-destination')}}">
                             <div class="input_field">
                                 <input type="text" placeholder="Where to go?">
                             </div>
@@ -66,10 +66,10 @@
                                 <input id="datepicker" placeholder="Date">
                             </div>
                             <div class="input_field">
-                                <select>
+                                <select name="category">
                                     <option data-display="Travel type">Travel type</option>
-                                    <option value="1">Some option</option>
-                                    <option value="2">Another option</option>
+                                    <option value="Individual">Individual</option>
+                                    <option value="Group">Group</option>
                                 </select>
                             </div>
                             <div class="search_btn">
@@ -219,7 +219,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_place">
                         <div class="thumb">
-                            <img src="{{url('img/'.$gt->img)}}" alt="">
+                            <img src="{{url('img/tour/'.$gt->img)}}" alt="">
                         <a href="#" class="prise">Start From</a>
                         </div>
                         <div class="place_info">

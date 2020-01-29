@@ -53,22 +53,16 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a class="active" href="index.html">home</a></li>
-                                            <li><a href="about.html">About</a></li>
-                                        <li><a class="" href="{{url('/travel-destination')}}">Destination</a></l/li>
-                                            <li><a href="#">pages <i class="ti-angle-down"></i></a>
+                                        <li><a class="active" href="{{url('/')}}">home</a></li>
+                                        <li><a class="" href="{{url('/destination')}}">Destination</a></l/li>
+                                            <li><a href="#">Tour <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
-                                                        <li><a href="destination_details.html">Destinations details</a></li>
-                                                        <li><a href="elements.html">elements</a></li>
+                                                        <li><a href="destination_details.html">Individual</a></li>
+                                                        <li><a href="elements.html">Group</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="#">blog <i class="ti-angle-down"></i></a>
-                                                <ul class="submenu">
-                                                    <li><a href="blog.html">blog</a></li>
-                                                    <li><a href="single-blog.html">single-blog</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="contact.html">Contact</a></li>
+                                           <li><a href="#">About</a></li>
+                                           <li><a href="#">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>

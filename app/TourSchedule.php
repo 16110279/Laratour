@@ -9,6 +9,7 @@ class TourSchedule extends Model
     protected $fillable =
     [
         'date_start',
+        'duration',
         'date_end',
         'tour_id',
     ];

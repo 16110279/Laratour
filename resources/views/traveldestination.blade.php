@@ -26,18 +26,24 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="search_wrap">
-                        <form class="search_form" action="#">
+                    <form class="search_form" action="{{url('/travel-destination')}}">
                             <div class="input_field">
-                                <input type="text" placeholder="Where to go?">
+                                {{-- <input type="text" placeholder="Where to go?"> --}}
+                                <select name="countries">
+                                    <option data-display="Travel type">Travel type</option>
+                                    @foreach ($country as $ctr)
+                                <option value="{{$ctr->id}}">{{$ctr->name}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div class="input_field">
                                 <input id="datepicker" placeholder="Date">
                             </div>
                             <div class="input_field">
-                                <select>
-                                    <option data-display="Travel type">Travel type</option>
-                                    <option value="1">Some option</option>
-                                    <option value="2">Another option</option>
+                                <select name="category">
+                                    <option selected disabled>Travel type</option>
+                                    <option value="Individual">Individual</option>
+                                    <option value="Group">Group</option>
                                 </select>
                             </div>
                             <div class="search_btn">
@@ -58,170 +64,25 @@
                 
                 <div class="col-lg-12">
                     <div class="row">
+                       @foreach ($tour as $item)
+                           
                         <div class="col-lg-4 col-md-4">
                             <div class="single_place">
                                 <div class="thumb">
-                                    <img src="{{asset('assets/img/place/1.png')}}" alt="">
-                                    <a href="#" class="prise">$500</a>
+                                    <img src="{{url('img/tour/'.$item->img)}}" alt="">
                                 </div>
                                 <div class="place_info">
-                                    <a href="destination_details.html"><h3>California</h3></a>
-                                    <p>United State of America</p>
-                                    <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i>
-                                             <a href="#">(20 Review)</a>
-                                        </span>
-                                        <div class="days">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">5 Days</a>
-                                        </div>
+                                <a href="{{url('tour/'.$item->slug)}}"><h3>{{$item->name}}</h3></a>
+                                <p>{{$item->country->name}}</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="single_place">
-                                <div class="thumb">
-                                    <img src="{{asset('assets/img/place/2.png')}}" alt="">
-                                    <a href="#" class="prise">$500</a>
-                                </div>
-                                <div class="place_info">
-                                    <a href="destination_details.html"><h3>Korola Megna</h3></a>
-                                    <p>United State of America</p>
-                                    <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i>
-                                             <a href="#">(20 Review)</a>
-                                        </span>
-                                        <div class="days">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">5 Days</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="single_place">
-                                <div class="thumb">
-                                    <img src="{{asset('assets/img/place/3.png')}}" alt="">
-                                    <a href="#" class="prise">$500</a>
-                                </div>
-                                <div class="place_info">
-                                    <a href="destination_details.html"><h3>London</h3></a>
-                                    <p>United State of America</p>
-                                    <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i>
-                                             <a href="#">(20 Review)</a>
-                                        </span>
-                                        <div class="days">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">5 Days</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="single_place">
-                                <div class="thumb">
-                                    <img src="{{asset('assets/img/place/4.png')}}" alt="">
-                                    <a href="#" class="prise">$500</a>
-                                </div>
-                                <div class="place_info">
-                                    <a href="destination_details.html"><h3>Miami Beach</h3></a>
-                                    <p>United State of America</p>
-                                    <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i>
-                                             <a href="#">(20 Review)</a>
-                                        </span>
-                                        <div class="days">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">5 Days</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="single_place">
-                                <div class="thumb">
-                                    <img src="{{asset('assets/img/place/5.png')}}" alt="">
-                                    <a href="#" class="prise">$500</a>
-                                </div>
-                                <div class="place_info">
-                                    <a href="destination_details.html"><h3>California</h3></a>
-                                    <p>United State of America</p>
-                                    <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i>
-                                             <a href="#">(20 Review)</a>
-                                        </span>
-                                        <div class="days">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">5 Days</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="single_place">
-                                <div class="thumb">
-                                    <img src="{{asset('assets/img/place/6.png')}}" alt="">
-                                    <a href="#" class="prise">$500</a>
-                                </div>
-                                <div class="place_info">
-                                    <a href="destination_details.html"><h3>Saintmartine Iceland</h3></a>
-                                    <p>United State of America</p>
-                                    <div class="rating_days d-flex justify-content-between">
-                                        <span class="d-flex justify-content-center align-items-center">
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i> 
-                                             <i class="fa fa-star"></i>
-                                             <a href="#">(20 Review)</a>
-                                        </span>
-                                        <div class="days">
-                                            <i class="fa fa-clock-o"></i>
-                                            <a href="#">5 Days</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="more_place_btn text-center">
-                                <a class="boxed-btn4" href="#">More Places</a>
-                            </div>
-                        </div>
-                    </div>
+                        
+                                            @endforeach
+ 
+
+                    
+                </div>
                 </div>
             </div>
         </div>
@@ -275,7 +136,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_trip">
                         <div class="thumb">
-                            <img src={{asset('assets/img/trip/1.png')}}" alt="">
+                            <img src="{{asset('assets/img/trip/1.png')}}" alt="">
                         </div>
                         <div class="info">
                             <div class="date">
@@ -291,7 +152,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_trip">
                         <div class="thumb">
-                            <img src={{asset('assets/img/trip/2.png')}}" alt="">
+                            <img src="{{asset('assets/img/trip/2.png')}}" alt="">
                         </div>
                         <div class="info">
                             <div class="date">
@@ -307,7 +168,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single_trip">
                         <div class="thumb">
-                            <img src={{asset('assets/img/trip/3.png')}}" alt="">
+                            <img src="{{asset('assets/img/trip/3.png')}}" alt="">
                         </div>
                         <div class="info">
                             <div class="date">

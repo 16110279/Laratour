@@ -137,15 +137,15 @@ ul.timeline>li:before {
             <div class="row">
                 <div class="col-lg-8 posts-list">
                     <div class="single-post">
-                                 <div class="blog_details">
-                            <h2>{{ $tour->name }}
+                                 {{-- <div class="blog_details"> --}}
+                            {{-- <h2>{{ $tour->name }}
                             </h2>
                             <br>
-                            <br>
+                            <br> --}}
 
         
                         <div class="feature-img">
-                            <img class="img-fluid" src="{{url('img/'.$tour->img)}}" alt="">
+                            <img class="img-fluid" src="{{url('img/tour/'.$tour->img)}}" alt="">
                         </div>
                         <br>
                         <br>
@@ -175,7 +175,7 @@ ul.timeline>li:before {
                                 </div>
                                 <br>
 
-                            </div>
+                            {{-- </div> --}}
 
                                                     <br>
     <h3>Tour Pricing</h3>
@@ -217,6 +217,7 @@ ul.timeline>li:before {
                  <td>
                              @csrf
                     <input type="text" name="data[{{ $key }}][id]"  value="{{ $value->id }}" class="id form-control" hidden>
+                    <input type="text" name="data[{{ $key }}][name]"  value="{{ $value->name }}" class="name form-control" hidden>
                     <input type="text" name="data[{{ $key }}][price]"  value="{{ $value->price }}" class="price form-control">
                 </td>
                 <td>
@@ -251,12 +252,15 @@ ul.timeline>li:before {
 
 
   <aside class="single_sidebar_widget search_widget">
-                            <h3 class="widget_title">Starting from</h3>
-                            <div class="row justify-content-center align-items-center">
+                            <h3 class="widget_title">Informasi Umum</h3>
+                            {{-- <div class="row justify-content-center"> --}}
                                 <!-- <button><a href="booking.html">Order</a></button> -->
+                                Nama Tour : {{ $tour->name }} <br>
+                                Negara : {{ $tour->country->name }} <br>
+                                Kategori : {{ $tour->category }} <br>
+                                Durasi : 
 
-
-                            </div>
+                            {{-- </div> --}}
                         </aside>
 
 
@@ -283,11 +287,11 @@ ul.timeline>li:before {
 							    @foreach ($tour->destination as $dst)
 								
 									   <div class="media post_item">
-                                <img src="{{url('img/destination/'.$dst->img)}}" alt="post" height="80" width="80">
+                                <img src="{{url('img/destination/'.$dst->image)}}" alt="post" height="80" width="80">
                                 <div class="media-body">
-                                    <a href="single-blog.html">
+                                    {{-- <a href="single-blog.html"> --}}
                                         <h3>{{ $dst->name }}</h3>
-                                    </a>
+                                    {{-- </a> --}}
                                     {{-- <p>January 12, 2019</p> --}}
                                 </div>
 
@@ -299,63 +303,43 @@ ul.timeline>li:before {
                             
                         </aside>
 
-                        <aside class="single_sidebar_widget popular_post_widget">
-                           <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                                            <h3> Inclusions</h3></a>
-                                    </h4>
-                                </div>
-                                
-                                <div id="collapse4" class="panel-collapse collapse show">
-                                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                          <aside class="single_sidebar_widget search_widget">
+                            <h3 class="widget_title">Inclusions</h3>
+                            {{-- <div class="row justify-content-center align-items-center"> --}}
+                                <div class="panel-body">
+                                <!-- <button><a href="booking.html">Order</a></button> -->
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                                         minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.</div>
-                                    </div>
+                                        commodo consequat.
                             </div>
-
-                    </aside>
-                        <aside class="single_sidebar_widget popular_post_widget">
-                           <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                                            <h3> Exclusions</h3></a>
-                                    </h4>
-                                </div>
-                                
-                                <div id="collapse4" class="panel-collapse collapse show">
-                                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        </aside>
+                          <aside class="single_sidebar_widget search_widget">
+                            <h3 class="widget_title">Exclusions</h3>
+                            {{-- <div class="row justify-content-center align-items-center"> --}}
+                                <div class="panel-body">
+                                <!-- <button><a href="booking.html">Order</a></button> -->
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                                         minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.</div>
-                                </div>
-
+                                        commodo consequat.
                             </div>
-
-                    </aside>
-                        <aside class="single_sidebar_widget popular_post_widget">
-                           <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
-                                            <h3> Terms Of Services</h3></a>
-                                    </h4>
-                                </div>
-                                
-                                <div id="collapse4" class="panel-collapse collapse show">
-                                    <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                        </aside>
+                          <aside class="single_sidebar_widget search_widget">
+                            <h3 class="widget_title">Terms Of Service</h3>
+                            {{-- <div class="row justify-content-center align-items-center"> --}}
+                                <div class="panel-body">
+                                <!-- <button><a href="booking.html">Order</a></button> -->
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
                                         minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat.</div>
-                                </div>
-
+                                        commodo consequat.
                             </div>
+                        </aside>
 
-                    </aside>
 
+                  
+                    
 
                     </div>
                 </div>
