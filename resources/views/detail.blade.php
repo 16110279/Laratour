@@ -258,7 +258,7 @@ ul.timeline>li:before {
                                 Nama Tour : {{ $tour->name }} <br>
                                 Negara : {{ $tour->country->name }} <br>
                                 Kategori : {{ $tour->category }} <br>
-                                Durasi : 
+                                {{-- Durasi :   --}}
 
                             {{-- </div> --}}
                         </aside>

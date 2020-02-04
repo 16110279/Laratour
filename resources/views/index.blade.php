@@ -90,77 +90,27 @@
                 <div class="col-lg-6">
                     <div class="section_title text-center mb_70">
                         <h3>Popular Destination</h3>
-                        <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
+                        {{-- <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p> --}}
                     </div>
                 </div>
             </div>
             <div class="row">
+                @foreach($data as $key => $val)
+
                 <div class="col-lg-4 col-md-6">
                     <div class="single_destination">
                         <div class="thumb">
-                            <img src="{{asset('assets/img/destination/1.png')}}" alt="">
+                            <img src="{{url('/img/country/'.$val['image'])}}" alt="">
                         </div>
                         <div class="content">
-                            <p class="d-flex align-items-center">Italy <a href="{{url('/travel_destination')}}">  07 Places</a> </p>
+                            <p class="d-flex align-items-center"> {{ $val['name'] }} <a href="{{url('/travel_destination')}}"> {{ $val['count'] }} Places</a> </p>
                             
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="{{asset('assets/img/destination/2.png')}}" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Brazil <a href="{{url('/travel_destination')}}">  03 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="{{asset('assets/img/destination/3.png')}}" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">America <a href="{{url('/travel_destination')}}">  10 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="{{asset('assets/img/destination/4.png')}}" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Nepal <a href="{{url('/travel_destination')}}">  02 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="{{asset('assets/img/destination/5.png')}}" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Maldives <a href="{{url('/travel_destination')}}">  02 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_destination">
-                        <div class="thumb">
-                            <img src="{{asset('assets/img/destination/6.png')}}" alt="">
-                        </div>
-                        <div class="content">
-                            <p class="d-flex align-items-center">Indonesia <a href="{{url('/travel_destination')}}">  05 Places</a> </p>
-                            
-                        </div>
-                    </div>
-                </div>
+
+                @endforeach
+
             </div>
         </div>
     </div>
@@ -207,8 +157,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <div class="section_title text-center mb_70">
-                        <h3>Popular d Places</h3>
-                        <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p>
+                        <h3>Paket Wisata</h3>
+                        {{-- <p>Suffered alteration in some form, by injected humour or good day randomised booth anim 8-bit hella wolf moon beard words.</p> --}}
                     </div>
                 </div>
             </div>
@@ -220,7 +170,7 @@
                     <div class="single_place">
                         <div class="thumb">
                             <img src="{{url('img/tour/'.$gt->img)}}" alt="">
-                        <a href="#" class="prise">Start From</a>
+                        {{-- <a href="#" class="prise">Start From</a> --}}
                         </div>
                         <div class="place_info">
                             <a href="{{url('tour/'.$gt->slug)}}"><h3>{{ $gt->name }}</h3></a>
@@ -365,66 +315,5 @@
     <!-- /testimonial_area  -->
 
 
-    <div class="recent_trip_area">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb_70">
-                        <h3>Recent Trips</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_trip">
-                        <div class="thumb">
-                            <img src="{{asset('assets/img/trip/1.png')}}" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="date">
-                                <span>Oct 12, 2019</span>
-                            </div>
-                            <a href="#">
-                                <h3>Journeys Are Best Measured In
-                                    New Friends</h3>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_trip">
-                        <div class="thumb">
-                            <img src="{{asset('assets/img/trip/2.png')}}" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="date">
-                                <span>Oct 12, 2019</span>
-                            </div>
-                            <a href="#">
-                                <h3>Journeys Are Best Measured In
-                                    New Friends</h3>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_trip">
-                        <div class="thumb">
-                            <img src="{{asset('assets/img/trip/3.png')}}" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="date">
-                                <span>Oct 12, 2019</span>
-                            </div>
-                            <a href="#">
-                                <h3>Journeys Are Best Measured In
-                                    New Friends</h3>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     @endsection

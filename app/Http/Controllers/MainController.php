@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Destination;
 use App\Tour;
+use App\TourDestination;
 use App\Countries;
 use Illuminate\Http\Request;
 
@@ -15,10 +16,28 @@ class MainController extends Controller
      */
     public function index()
     {
+        $country = Countries::orderBy('name')->get();
+        // $array = [];
+        foreach($country as $key => $val)
+        {
+            $count = Destination::where('country_id',$val->id)->count();
+            $data [] = array(
+                'id' => $val->id,
+                'name' => $val->name,
+                'image' => $val->image,
+                'count' => $count
+            ) ;
+            // $array['count'] = $dst;
+            // $array['name'] = $val->name;
+        }
 
+        // @dump($data);
+
+
+        // @dump($country);
         $grouptour = Tour::with('country')->get();
         $individualtour = Tour::where('category','Individual')->get();
-        return view('index', compact('grouptour','individualtour'));
+        return view('index', compact('grouptour','individualtour','data'));
     }
 
     public function traveldestination(Request $request)

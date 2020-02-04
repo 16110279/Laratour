@@ -61,7 +61,7 @@
                         <br>
                         {{-- @dump($date) --}}
                         Nama : {{ $tour->name }} <br>
-                        Tour Duration : <br>
+                        {{-- Tour Duration : <br> --}}
                         Category : {{ $tour->category }} <br>
                         Departure : {{ $date->date_start }} <br>
                         <br>
